@@ -1,7 +1,7 @@
 ---
 name: Informe um erro
 about: Envie o bug para que possamos melhorar
-title: "[BUG]"
+title: "[BUG] Insira um título aqui"
 labels: bug
 assignees: ''
 
