@@ -1,7 +1,7 @@
 ---
 name: Solicitação de feature ou melhoria
 about: Sugira uma ideia para este projeto
-title: "[FEATURE] Insira um título aqui"
+title: "[FEATURE] Perfil de acesso | Título da feature"
 labels: feature
 assignees: ''
 
