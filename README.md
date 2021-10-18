@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+<p align="center">
+<img src="./assets/compiladoras-preto-vermelho.png" style="width: 40%;" alt="Logo Compiladoras de Cafeína">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Plataforma - Compiladoras de Cafeína
 
-## Available Scripts
+Olá! Seja muito bem-vinda ao repositório da Plataforma das Compiladoras de Cafeína! Estamos muito felizes com o seu interesse em contribuir com a nossa comunidade!
 
-In the project directory, you can run:
+## Como posso executar esse projeto?
 
-### `yarn start`
+### O que eu preciso ter instalado para executar o projeto?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [NodeJS](https://nodejs.org/en/download/)
+- [Yarn](https://yarnpkg.com/getting-started/install)
+- Editor de texto da sua preferência
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Passo a passo de instalação
 
-### `yarn test`
+Siga os seguintes passos no terminal para executar o nosso projeto:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone este repositório na sua máquina
 
-### `yarn build`
+```
+git clone https://github.com/compiladoras/Plataforma.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Entre na pasta do projeto e execute o comando abaixo para instalar as dependências necessárias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+yarn
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Para contribuir com o nosso projeto você precisa estar na branch `develop`
 
-### `yarn eject`
+```
+git checkout develop
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Após a instalação e certificando-se de que está na branch correta, execute o comando abaixo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+5. Agora é só contribuir! 🥳
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Passo a passo para execução de testes
 
-## Learn More
+Quando quiser executar os testes da aplicação basta executar o comando:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+yarn test
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Pull Request Template
+
+Nós priorizamos a padronização e organização dos nossos projetos, por isso trabalhamos com _pull request templates_ para facilitar a comunicação entre nós e a revisão do código por nossas companheiras de time. Quando você abrir um _pull request_ lembre-se de preencher o nosso template com bastante carinho. Nós agradecemos muito! ❤️
+
+## Quais tecnologias nós usamos?
+
+Aqui nós trabalhamos com:
+
+- React
+- Typescript
+- Jest
+- Styled Components
+
+_____
+
+Estamos muito felizes por você estar conosco!
+
+Abraços,
+
+
+<img src="./assets/compiladoras-preto-vermelho.png" style="width: 15%;" alt="Logo Compiladoras de Cafeína">
