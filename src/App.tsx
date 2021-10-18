@@ -1,6 +1,5 @@
 import React from 'react';
-import './App.css';
 
-const App = (): React.ReactElement => <></>;
+const App = (): React.ReactElement => <p>Compiladoras de Cafeína</p>;
 
 export default App;
