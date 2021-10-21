@@ -1,13 +1,14 @@
 import React from 'react';
 import { StyledButton } from './button.style';
-import { Icon } from '..';
+import { Icon, Icons } from '..';
 
 interface ButtonProps {
   text: string;
+  icon: Icons;
 }
 
-export const Button = ({ text }: ButtonProps): React.ReactElement => (
+export const Button = ({ text, icon }: ButtonProps): React.ReactElement => (
   <StyledButton type="button">
-    {text} <Icon icon="cadeado-botao" />
+    {text} <Icon icon={icon} />
   </StyledButton>
 );

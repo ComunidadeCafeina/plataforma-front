@@ -5,7 +5,7 @@ const projects = [
     brandIcon: 'comunidade' as Icons,
     title: 'Comunidade Compiladoras',
     description: 'Comunidade de apoio e engajamento',
-    icon: 'cadeado-botao',
+    icon: 'cadeado-botao' as Icons,
     link: '',
   },
   {
@@ -13,7 +13,7 @@ const projects = [
     title: 'Cafeína Vagas',
     description:
       'Canal do Telegram com vagas inclusivas e para iniciantes em TI',
-    icon: 'seta',
+    icon: 'seta' as Icons,
     link: '',
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     title: 'Central da Programadora',
     description:
       'Servidor no Discord com diversos canais para ajudar no seu desenvolvimento profissional',
-    icon: 'cadeado-botao',
+    icon: 'cadeado-botao' as Icons,
     link: '',
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     title: 'Central Compiladoras',
     description:
       'Um canal no Telegram para ficar em dia com todas as notícias e avisos da comunidade',
-    icon: 'seta',
+    icon: 'seta' as Icons,
     link: '',
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     title: 'Cafeína Literária',
     description:
       'Nosso clube do livro, com leitura coletiva e podcasts literários, via Telegram',
-    icon: 'seta',
+    icon: 'seta' as Icons,
     link: '',
   },
 ];
