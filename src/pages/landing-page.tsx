@@ -23,14 +23,12 @@ const LandingPage = (): React.ReactElement => (
             size: 719,
             settings: {
               slidesToShow: 1,
-              infinite: true,
             },
           },
           {
             size: 991,
             settings: {
               slidesToShow: 2,
-              infinite: true,
             },
           },
         ]}

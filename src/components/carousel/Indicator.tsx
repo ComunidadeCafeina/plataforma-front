@@ -5,7 +5,6 @@ import styled from 'styled-components';
 type Props = {
   items: number;
   slidesToShow: number;
-  infinite?: boolean;
   active: number;
   onClick: (index: number) => void;
 };
@@ -35,12 +34,8 @@ export const Indicator = styled.button<{ highlighted: boolean }>`
   }
 `;
 
-const getNumberOfIndicators = (
-  items: number,
-  slidesToShow: number,
-  infinite?: boolean,
-) => {
-  if (infinite || slidesToShow < items) {
+const getNumberOfIndicators = (items: number, slidesToShow: number) => {
+  if (slidesToShow < items) {
     return items;
   }
 
@@ -50,22 +45,19 @@ const getNumberOfIndicators = (
 const Component: React.FC<Props> = ({
   items,
   slidesToShow,
-  infinite,
   active,
   onClick,
 }) => {
   return (
     <IndicatorWrapper>
-      {[...Array(getNumberOfIndicators(items, slidesToShow, infinite))].map(
-        (e, i) => (
-          <Indicator
-            key={`carousel-indicator-${i}`}
-            data-testid={`carousel-indicator-${i}`}
-            highlighted={i === active % items}
-            onClick={() => onClick(i)}
-          />
-        ),
-      )}
+      {[...Array(getNumberOfIndicators(items, slidesToShow))].map((e, i) => (
+        <Indicator
+          key={`carousel-indicator-${i}`}
+          data-testid={`carousel-indicator-${i}`}
+          highlighted={i === active % items}
+          onClick={() => onClick(i)}
+        />
+      ))}
     </IndicatorWrapper>
   );
 };

@@ -30,7 +30,6 @@ const renderSlides = (
   slideWidth = 0,
   slidesToShow: number,
   active: number,
-  infinite?: boolean,
 ) => {
   const slides: React.ReactNode[] = [];
   const preClones: React.ReactNode[] = [];
@@ -43,32 +42,29 @@ const renderSlides = (
       </Slide>,
     );
 
-    if (infinite) {
-      const preCloneNo = slideCount - index;
+    const preCloneNo = slideCount - index;
 
-      if (
-        preCloneNo <=
-        getPreSlideCount({
-          slideCount,
-          slidesToShow,
-          infinite,
-        })
-      ) {
-        preClones.push(
-          <Slide width={slideWidth} key={`slide-pre${-preCloneNo}`}>
-            {child}
-          </Slide>,
-        );
-      }
-
-      const postCloneNo = index + slideCount;
-
-      postClones.push(
-        <Slide width={slideWidth} key={`slide-post${postCloneNo}`}>
+    if (
+      preCloneNo <=
+      getPreSlideCount({
+        slideCount,
+        slidesToShow,
+      })
+    ) {
+      preClones.push(
+        <Slide width={slideWidth} key={`slide-pre${-preCloneNo}`}>
           {child}
         </Slide>,
       );
     }
+
+    const postCloneNo = index + slideCount;
+
+    postClones.push(
+      <Slide width={slideWidth} key={`slide-post${postCloneNo}`}>
+        {child}
+      </Slide>,
+    );
   });
   return [...preClones, ...slides, ...postClones];
 };
@@ -79,7 +75,6 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
   active,
   infiniteActive,
   slidesToShow = 1,
-  infinite,
   onWindowResize,
   onSwipe,
 }) => {
@@ -90,7 +85,6 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
     getSliderStyles({
       slideCount,
       slidesToShow,
-      infinite,
       sliderWidth,
     }),
   );
@@ -121,7 +115,6 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
       getSliderStyles({
         slideCount,
         slidesToShow,
-        infinite,
         sliderWidth,
       }),
     );
@@ -130,8 +123,8 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
     active,
     infiniteActive,
     slidesToShow,
-    infinite,
     sliderWidth,
+    slideCount,
   ]);
 
   return (
@@ -151,7 +144,6 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
             styles.slideWidth,
             slidesToShow,
             infiniteActive,
-            infinite,
           )}
         </Track>
       </Swipeable>

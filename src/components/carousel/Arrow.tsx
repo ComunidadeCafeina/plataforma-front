@@ -10,7 +10,6 @@ export enum ArrowType {
 
 type Props = {
   type: ArrowType;
-  disabled?: boolean;
   onClick: () => void;
 };
 
@@ -32,14 +31,14 @@ const Arrow = styled.button<Partial<Props>>`
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
-const Component: React.FC<Props> = ({ type, onClick, disabled }) => (
+const Component: React.FC<Props> = ({ type, onClick }) => (
   <Container>
     {type === ArrowType.previous ? (
-      <Arrow disabled={disabled} onClick={onClick} data-testid="arrow-previous">
+      <Arrow onClick={onClick} data-testid="arrow-previous">
         <Icon icon="seta-esquerda" />
       </Arrow>
     ) : (
-      <Arrow disabled={disabled} onClick={onClick} data-testid="arrow-next">
+      <Arrow onClick={onClick} data-testid="arrow-next">
         <Icon icon="seta-direita" />
       </Arrow>
     )}

@@ -4,16 +4,10 @@ import Slider from './Slider';
 import Indicator from './Indicator';
 import Arrow, { ArrowType } from './Arrow';
 import { SwipeDirection } from './Swipeable';
-import {
-  canGoNext,
-  canGoPrevious,
-  getIndexForAction,
-  matchBreakpoint,
-} from './helpers';
+import { getIndexForAction, matchBreakpoint } from './helpers';
 
 export type CarouselSettings = {
   slidesToShow?: number;
-  infinite?: boolean;
 };
 
 export type Breakpoint = {
@@ -45,12 +39,10 @@ const SliderWrapper = styled.div`
 const Component: React.FC<Props> = ({
   slidesToShow = 1,
   breakpoints,
-  infinite,
   children,
 }) => {
   const childrenCount = React.Children.count(children);
   const carouselSettings = {
-    infinite,
     slidesToShow,
   };
   const [activeSettings, setActiveSettings] = useState(
@@ -70,7 +62,6 @@ const Component: React.FC<Props> = ({
           onClick={() =>
             setActive(getIndexForAction(active, active - 1, childrenCount))
           }
-          disabled={!canGoPrevious(active, activeSettings.infinite)}
         />
         <Slider
           previousActive={previousActive}
@@ -84,20 +75,9 @@ const Component: React.FC<Props> = ({
           onSwipe={(direction: SwipeDirection) => {
             let newActive = active;
 
-            if (
-              direction === SwipeDirection.Left &&
-              canGoNext(
-                active,
-                childrenCount,
-                activeSettings.slidesToShow || slidesToShow,
-                activeSettings.infinite,
-              )
-            ) {
+            if (direction === SwipeDirection.Left) {
               newActive = active + 1;
-            } else if (
-              direction === SwipeDirection.Right &&
-              canGoPrevious(active, activeSettings.infinite)
-            ) {
+            } else if (direction === SwipeDirection.Right) {
               newActive = active - 1;
             }
 
@@ -112,20 +92,11 @@ const Component: React.FC<Props> = ({
           onClick={() =>
             setActive(getIndexForAction(active, active + 1, childrenCount))
           }
-          disabled={
-            !canGoNext(
-              active,
-              childrenCount,
-              activeSettings.slidesToShow || slidesToShow,
-              activeSettings.infinite,
-            )
-          }
         />
       </SliderWrapper>
       <Indicator
         items={childrenCount}
         slidesToShow={activeSettings.slidesToShow || slidesToShow}
-        infinite={activeSettings.infinite}
         active={infiniteActive}
         onClick={index =>
           setActive(getIndexForAction(active, index, childrenCount))

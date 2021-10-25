@@ -7,43 +7,31 @@ import { SwipeDirection } from './Swipeable';
 type SlideCountParams = {
   slideCount: number;
   slidesToShow: number;
-  infinite?: boolean;
 };
 
 type SliderStyleProps = {
   sliderWidth: number;
   slideCount: number;
   slidesToShow?: number;
-  infinite?: boolean;
 };
 
 export const getPreSlideCount = ({
   slideCount,
   slidesToShow,
-  infinite,
 }: SlideCountParams) => {
-  if (!infinite) {
-    return 0;
-  }
-
   return slideCount < slidesToShow ? slidesToShow : slideCount;
 };
 
 export const getPostSlideCount = ({
   slideCount,
   slidesToShow,
-  infinite,
 }: SlideCountParams) => {
-  if (!infinite) {
-    return 0;
-  }
   return slideCount + slidesToShow + 1;
 };
 
 export const getTotalSlideCount = ({
   slideCount,
   slidesToShow,
-  infinite,
 }: SlideCountParams) => {
   if (slideCount === 1) {
     return 1;
@@ -53,12 +41,10 @@ export const getTotalSlideCount = ({
     getPreSlideCount({
       slideCount,
       slidesToShow,
-      infinite,
     }) +
     getPostSlideCount({
       slideCount,
       slidesToShow,
-      infinite,
     }) +
     slideCount
   );
@@ -96,27 +82,6 @@ export const getIndexForAction = (
   };
 };
 
-export const canGoPrevious = (active: number, infinite?: boolean) => {
-  if (infinite || active > 0) {
-    return true;
-  }
-
-  return false;
-};
-
-export const canGoNext = (
-  active: number,
-  items: number,
-  slidesToShow: number,
-  infinite?: boolean,
-) => {
-  if (infinite || active < items - slidesToShow) {
-    return true;
-  }
-
-  return false;
-};
-
 export const matchBreakpoint = (
   size: number,
   settings: CarouselSettings,
@@ -147,7 +112,6 @@ export const isValidSwipe = (movement: number, trigger: number) =>
 export const getSliderStyles = ({
   slideCount,
   slidesToShow = 1,
-  infinite,
   sliderWidth,
 }: SliderStyleProps) => {
   let slideWidth;
@@ -158,22 +122,18 @@ export const getSliderStyles = ({
   const totalSlideCount = getTotalSlideCount({
     slideCount,
     slidesToShow,
-    infinite,
   });
 
   if (sliderWidth) {
     slideWidth = Math.ceil(sliderWidth / slidesToShow);
 
-    if (infinite) {
-      slidesToOffset = -getPreSlideCount({
-        slideCount,
-        slidesToShow,
-        infinite,
-      });
+    slidesToOffset = -getPreSlideCount({
+      slideCount,
+      slidesToShow,
+    });
 
-      if (slidesToShow >= slideCount) {
-        slidesToOffset += 1 + slidesToShow - slideCount;
-      }
+    if (slidesToShow >= slideCount) {
+      slidesToOffset += 1 + slidesToShow - slideCount;
     }
 
     slideOffset = slidesToOffset * slideWidth;
