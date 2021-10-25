@@ -2,16 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  flex: none;
   flex-direction: column;
   align-items: center;
   padding: 24px 16px;
-  width: 343px;
-  height: 328px;
+  height: 420px;
   background: #ffffff;
   border: 2px solid #e8e8e8;
-  box-sizing: border-box;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 24px;
+  width: 82%;
+  text-align: center;
 `;
 
 export const Title = styled.p`
@@ -33,7 +34,7 @@ export const Description = styled.p`
   align-items: center;
   text-align: center;
   margin: 24px 0;
-  height: 72px;
+  height: 115px;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
