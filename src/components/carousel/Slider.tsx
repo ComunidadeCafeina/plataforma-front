@@ -6,7 +6,7 @@ import { Props } from './Carousel';
 import Track from './Track';
 import Slide from './Slide';
 import Swipeable, { SwipeDirection } from './Swipeable';
-import { getPreSlideCount, getSliderStyles, isIndexFocused } from './helpers';
+import { getPreSlideCount, getSliderStyles } from './helpers';
 
 type SliderProps = Props & {
   previousActive: number;
@@ -31,7 +31,6 @@ const renderSlides = (
   slideWidth = 0,
   slidesToShow: number,
   active: number,
-  scaleOnFocus?: number,
   infinite?: boolean,
   center?: boolean,
   debug?: boolean,
@@ -42,12 +41,7 @@ const renderSlides = (
 
   React.Children.forEach(children, (child, index) => {
     slides.push(
-      <Slide
-        width={slideWidth}
-        key={`slide${index}`}
-        focused={isIndexFocused(index, active)}
-        scaleOnFocus={scaleOnFocus}
-      >
+      <Slide width={slideWidth} key={`slide${index}`}>
         {child}
         {debug && <p>{`slide ${index}`}</p>}
       </Slide>,
@@ -97,7 +91,6 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
   infinite,
   onWindowResize,
   swipeable,
-  scaleOnFocus,
   onSwipe,
   debug,
 }) => {
@@ -181,7 +174,6 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
             styles.slideWidth,
             slidesToShow,
             infiniteActive,
-            scaleOnFocus,
             infinite,
             center,
             debug,

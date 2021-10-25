@@ -152,9 +152,6 @@ export const getSwipeDirection = (movementX: number) => {
 export const isValidSwipe = (movement: number, trigger: number) =>
   trigger < Math.abs(movement);
 
-export const isIndexFocused = (index: number, active: number) =>
-  index === active;
-
 export const getSliderStyles = ({
   slideCount,
   slidesToShow = 1,

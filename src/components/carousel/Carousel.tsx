@@ -17,7 +17,6 @@ export type CarouselSettings = {
   centerPadding?: number;
   infinite?: boolean;
   swipeable?: boolean;
-  scaleOnFocus?: number;
 };
 
 export type Breakpoint = {
@@ -50,7 +49,6 @@ const Component: React.FC<Props & { debug?: boolean }> = ({
   swipeable = true,
   slidesToShow = 1,
   centerPadding = 0,
-  scaleOnFocus = 1,
   breakpoints,
   center,
   infinite,
@@ -64,7 +62,6 @@ const Component: React.FC<Props & { debug?: boolean }> = ({
     slidesToShow,
     swipeable,
     centerPadding,
-    scaleOnFocus,
   };
   const [activeSettings, setActiveSettings] = useState(
     matchBreakpoint(window.innerWidth, carouselSettings, breakpoints),
