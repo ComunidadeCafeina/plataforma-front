@@ -8,15 +8,12 @@ type SlideCountParams = {
   slideCount: number;
   slidesToShow: number;
   infinite?: boolean;
-  center?: boolean;
 };
 
 type SliderStyleProps = {
   sliderWidth: number;
   slideCount: number;
   slidesToShow?: number;
-  center?: boolean;
-  centerPadding?: number;
   infinite?: boolean;
 };
 
@@ -24,15 +21,12 @@ export const getPreSlideCount = ({
   slideCount,
   slidesToShow,
   infinite,
-  center,
 }: SlideCountParams) => {
   if (!infinite) {
     return 0;
   }
 
-  return (
-    (slideCount < slidesToShow ? slidesToShow : slideCount) + (center ? 1 : 0)
-  );
+  return slideCount < slidesToShow ? slidesToShow : slideCount;
 };
 
 export const getPostSlideCount = ({
@@ -50,7 +44,6 @@ export const getTotalSlideCount = ({
   slideCount,
   slidesToShow,
   infinite,
-  center,
 }: SlideCountParams) => {
   if (slideCount === 1) {
     return 1;
@@ -61,7 +54,6 @@ export const getTotalSlideCount = ({
       slideCount,
       slidesToShow,
       infinite,
-      center,
     }) +
     getPostSlideCount({
       slideCount,
@@ -155,8 +147,6 @@ export const isValidSwipe = (movement: number, trigger: number) =>
 export const getSliderStyles = ({
   slideCount,
   slidesToShow = 1,
-  center,
-  centerPadding = 0,
   infinite,
   sliderWidth,
 }: SliderStyleProps) => {
@@ -164,44 +154,25 @@ export const getSliderStyles = ({
   let slideOffset;
   let slidesToOffset = 0;
   let trackWidth;
-  let centerPaddingAdj;
 
   const totalSlideCount = getTotalSlideCount({
     slideCount,
     slidesToShow,
     infinite,
-    center,
   });
 
   if (sliderWidth) {
-    centerPaddingAdj = center ? centerPadding * 2 : 0;
-
-    slideWidth = Math.ceil((sliderWidth - centerPaddingAdj) / slidesToShow);
+    slideWidth = Math.ceil(sliderWidth / slidesToShow);
 
     if (infinite) {
       slidesToOffset = -getPreSlideCount({
         slideCount,
         slidesToShow,
         infinite,
-        center,
       });
 
       if (slidesToShow >= slideCount) {
         slidesToOffset += 1 + slidesToShow - slideCount;
-      }
-
-      if (center) {
-        slidesToOffset += Math.floor(slidesToShow / 2);
-      }
-    } else if (center) {
-      slidesToOffset = Math.floor(slidesToShow / 2);
-
-      if (slidesToShow !== 1) {
-        const currentSlideFit = sliderWidth / slideWidth;
-        const newSlidesToShow = currentSlideFit + slidesToOffset;
-        slideWidth = Math.ceil(
-          (sliderWidth - centerPaddingAdj) / newSlidesToShow,
-        );
       }
     }
 
@@ -212,7 +183,6 @@ export const getSliderStyles = ({
   return {
     slideOffset,
     trackWidth,
-    centerPadding,
     slideWidth: slideWidth || 0,
   };
 };

@@ -13,8 +13,6 @@ import {
 
 export type CarouselSettings = {
   slidesToShow?: number;
-  center?: boolean;
-  centerPadding?: number;
   infinite?: boolean;
   swipeable?: boolean;
 };
@@ -45,23 +43,18 @@ const SliderWrapper = styled.div`
   width: 100%;
 `;
 
-const Component: React.FC<Props & { debug?: boolean }> = ({
+const Component: React.FC<Props> = ({
   swipeable = true,
   slidesToShow = 1,
-  centerPadding = 0,
   breakpoints,
-  center,
   infinite,
-  debug,
   children,
 }) => {
   const childrenCount = React.Children.count(children);
   const carouselSettings = {
-    center,
     infinite,
     slidesToShow,
     swipeable,
-    centerPadding,
   };
   const [activeSettings, setActiveSettings] = useState(
     matchBreakpoint(window.innerWidth, carouselSettings, breakpoints),
@@ -91,7 +84,6 @@ const Component: React.FC<Props & { debug?: boolean }> = ({
               matchBreakpoint(window.innerWidth, carouselSettings, breakpoints),
             )
           }
-          debug={debug}
           onSwipe={(direction: SwipeDirection) => {
             let newActive = active;
 
