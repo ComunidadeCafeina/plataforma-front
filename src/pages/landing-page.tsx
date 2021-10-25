@@ -1,6 +1,7 @@
 import React from 'react';
+import Carousel from '../components/carousel/Carousel';
 import { Icon, ContentContainer, Title } from '../components';
-import { IconBox, Description } from './landing-page.style';
+import { IconBox, Description, CardsContainer } from './landing-page.style';
 import { Card } from '../components/card';
 import projects from './projects';
 
@@ -15,9 +16,34 @@ const LandingPage = (): React.ReactElement => (
       Alguns projetos são exclusivos para pessoas que fazem parte da comunidade
     </Description>
 
-    {projects.map(project => (
-      <Card key={project.brandIcon} {...project} />
-    ))}
+    <CardsContainer>
+      <Carousel
+        breakpoints={[
+          {
+            size: 719,
+            settings: {
+              slidesToShow: 1,
+              infinite: true,
+              showArrows: true,
+              showIndicator: true,
+            },
+          },
+          {
+            size: 991,
+            settings: {
+              slidesToShow: 2,
+              infinite: true,
+              showArrows: true,
+              showIndicator: true,
+            },
+          },
+        ]}
+      >
+        {projects.map((project, index) => (
+          <Card key={project.brandIcon} {...project} id={`card-${index}`} />
+        ))}
+      </Carousel>
+    </CardsContainer>
   </ContentContainer>
 );
 

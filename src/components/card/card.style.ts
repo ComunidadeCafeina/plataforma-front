@@ -6,13 +6,18 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 24px 16px;
-  height: 420px;
+  height: 370px;
   background: #ffffff;
   border: 2px solid #e8e8e8;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 24px;
   width: 82%;
   text-align: center;
+  margin: auto;
+
+  @media screen and (min-width: 720px) and (max-width: 992px) {
+    height: 400px;
+  }
 `;
 
 export const Title = styled.p`
@@ -34,7 +39,7 @@ export const Description = styled.p`
   align-items: center;
   text-align: center;
   margin: 24px 0;
-  height: 115px;
+  height: 90px;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;

@@ -3,3 +3,4 @@ export * from './icon';
 export * from './title';
 export * from './card';
 export * from './button';
+export * from './carousel';
