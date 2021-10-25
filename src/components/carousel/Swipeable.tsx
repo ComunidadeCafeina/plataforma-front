@@ -10,7 +10,6 @@ export enum SwipeDirection {
 
 type Props = {
   xMovementTrigger: number;
-  swipeable?: boolean;
   onSwipe?: (direction: SwipeDirection) => void;
 };
 
@@ -27,7 +26,6 @@ const initialState: State = {
 };
 
 const Swipeable: React.FC<Props> = ({
-  swipeable,
   xMovementTrigger,
   onSwipe,
   children,
@@ -35,13 +33,11 @@ const Swipeable: React.FC<Props> = ({
   const [swipingState, setSwipingState] = useState(initialState);
 
   const onSwipeStart = (movementX: number, startX = 0) => {
-    if (swipeable) {
-      setSwipingState({
-        swiping: true,
-        movementX,
-        startX,
-      });
-    }
+    setSwipingState({
+      swiping: true,
+      movementX,
+      startX,
+    });
   };
 
   const onMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {

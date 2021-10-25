@@ -14,7 +14,6 @@ import {
 export type CarouselSettings = {
   slidesToShow?: number;
   infinite?: boolean;
-  swipeable?: boolean;
 };
 
 export type Breakpoint = {
@@ -44,7 +43,6 @@ const SliderWrapper = styled.div`
 `;
 
 const Component: React.FC<Props> = ({
-  swipeable = true,
   slidesToShow = 1,
   breakpoints,
   infinite,
@@ -54,7 +52,6 @@ const Component: React.FC<Props> = ({
   const carouselSettings = {
     infinite,
     slidesToShow,
-    swipeable,
   };
   const [activeSettings, setActiveSettings] = useState(
     matchBreakpoint(window.innerWidth, carouselSettings, breakpoints),

@@ -81,7 +81,6 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
   slidesToShow = 1,
   infinite,
   onWindowResize,
-  swipeable,
   onSwipe,
 }) => {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -137,11 +136,7 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
 
   return (
     <Slider ref={sliderRef}>
-      <Swipeable
-        swipeable={swipeable}
-        xMovementTrigger={styles.slideWidth / 2}
-        onSwipe={onSwipe}
-      >
+      <Swipeable xMovementTrigger={styles.slideWidth / 2} onSwipe={onSwipe}>
         <Track
           width={styles.trackWidth}
           previousActive={previousActive}
