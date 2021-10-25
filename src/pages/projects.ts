@@ -13,7 +13,7 @@ const projects = [
     title: 'Cafeína Vagas',
     description:
       'Canal do Telegram com vagas inclusivas e para iniciantes em TI',
-    icon: 'seta' as Icons,
+    icon: 'seta-direita' as Icons,
     link: '',
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     title: 'Central Compiladoras',
     description:
       'Um canal no Telegram para ficar em dia com todas as notícias e avisos da comunidade',
-    icon: 'seta' as Icons,
+    icon: 'seta-direita' as Icons,
     link: '',
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     title: 'Cafeína Literária',
     description:
       'Nosso clube do livro, com leitura coletiva e podcasts literários, via Telegram',
-    icon: 'seta' as Icons,
+    icon: 'seta-direita' as Icons,
     link: '',
   },
 ];

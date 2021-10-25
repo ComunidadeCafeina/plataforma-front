@@ -242,19 +242,39 @@ export const icons = buildIcons({
       },
     ],
   },
-  seta: {
-    width: '21px',
-    height: '22px',
+  'seta-direita': {
+    width: '17px',
+    height: '18px',
     paths: [
       {
-        d: 'M1 10.9937H20',
+        d: 'M1 9.25049L16 9.25049',
         stroke: '#FE393B',
         'stroke-width': '2',
         'stroke-linecap': 'round',
         'stroke-linejoin': 'round',
       },
       {
-        d: 'M10.5 1.49365L20 10.9937L10.5 20.4937',
+        d: 'M8.5 1.75049L16 9.25049L8.5 16.7505',
+        stroke: '#FE393B',
+        'stroke-width': '2',
+        'stroke-linecap': 'round',
+        'stroke-linejoin': 'round',
+      },
+    ],
+  },
+  'seta-esquerda': {
+    width: '17px',
+    height: '18px',
+    paths: [
+      {
+        d: 'M16 9.25049L1 9.25049',
+        stroke: '#FE393B',
+        'stroke-width': '2',
+        'stroke-linecap': 'round',
+        'stroke-linejoin': 'round',
+      },
+      {
+        d: 'M8.5 16.7505L1 9.25049L8.5 1.75049',
         stroke: '#FE393B',
         'stroke-width': '2',
         'stroke-linecap': 'round',
