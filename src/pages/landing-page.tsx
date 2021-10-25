@@ -24,8 +24,6 @@ const LandingPage = (): React.ReactElement => (
             settings: {
               slidesToShow: 1,
               infinite: true,
-              showArrows: true,
-              showIndicator: true,
             },
           },
           {
@@ -33,8 +31,6 @@ const LandingPage = (): React.ReactElement => (
             settings: {
               slidesToShow: 2,
               infinite: true,
-              showArrows: true,
-              showIndicator: true,
             },
           },
         ]}

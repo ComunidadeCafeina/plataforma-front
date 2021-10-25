@@ -16,8 +16,6 @@ export type CarouselSettings = {
   center?: boolean;
   centerPadding?: number;
   infinite?: boolean;
-  showIndicator?: boolean;
-  showArrows?: boolean;
   swipeable?: boolean;
   scaleOnFocus?: number;
 };
@@ -49,8 +47,6 @@ const SliderWrapper = styled.div`
 `;
 
 const Component: React.FC<Props & { debug?: boolean }> = ({
-  showIndicator = true,
-  showArrows = true,
   swipeable = true,
   slidesToShow = 1,
   centerPadding = 0,
@@ -66,8 +62,6 @@ const Component: React.FC<Props & { debug?: boolean }> = ({
     center,
     infinite,
     slidesToShow,
-    showArrows,
-    showIndicator,
     swipeable,
     centerPadding,
     scaleOnFocus,
@@ -84,15 +78,13 @@ const Component: React.FC<Props & { debug?: boolean }> = ({
   return (
     <CarouselWrapper>
       <SliderWrapper>
-        {activeSettings.showArrows && (
-          <Arrow
-            type={ArrowType.previous}
-            onClick={() =>
-              setActive(getIndexForAction(active, active - 1, childrenCount))
-            }
-            disabled={!canGoPrevious(active, activeSettings.infinite)}
-          />
-        )}
+        <Arrow
+          type={ArrowType.previous}
+          onClick={() =>
+            setActive(getIndexForAction(active, active - 1, childrenCount))
+          }
+          disabled={!canGoPrevious(active, activeSettings.infinite)}
+        />
         <Slider
           previousActive={previousActive}
           active={active}
@@ -129,34 +121,30 @@ const Component: React.FC<Props & { debug?: boolean }> = ({
         >
           {children}
         </Slider>
-        {activeSettings.showArrows && (
-          <Arrow
-            type={ArrowType.next}
-            onClick={() =>
-              setActive(getIndexForAction(active, active + 1, childrenCount))
-            }
-            disabled={
-              !canGoNext(
-                active,
-                childrenCount,
-                activeSettings.slidesToShow || slidesToShow,
-                activeSettings.infinite,
-              )
-            }
-          />
-        )}
-      </SliderWrapper>
-      {activeSettings.showIndicator && (
-        <Indicator
-          items={childrenCount}
-          slidesToShow={activeSettings.slidesToShow || slidesToShow}
-          infinite={activeSettings.infinite}
-          active={infiniteActive}
-          onClick={index =>
-            setActive(getIndexForAction(active, index, childrenCount))
+        <Arrow
+          type={ArrowType.next}
+          onClick={() =>
+            setActive(getIndexForAction(active, active + 1, childrenCount))
+          }
+          disabled={
+            !canGoNext(
+              active,
+              childrenCount,
+              activeSettings.slidesToShow || slidesToShow,
+              activeSettings.infinite,
+            )
           }
         />
-      )}
+      </SliderWrapper>
+      <Indicator
+        items={childrenCount}
+        slidesToShow={activeSettings.slidesToShow || slidesToShow}
+        infinite={activeSettings.infinite}
+        active={infiniteActive}
+        onClick={index =>
+          setActive(getIndexForAction(active, index, childrenCount))
+        }
+      />
     </CarouselWrapper>
   );
 };
