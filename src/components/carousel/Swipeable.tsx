@@ -8,16 +8,17 @@ export enum SwipeDirection {
   Right = 'Right',
 }
 
-type Props = {
+interface SwipeableProps {
   xMovementTrigger: number;
   onSwipe?: (direction: SwipeDirection) => void;
-};
+  children: React.ReactNode;
+}
 
-type State = {
+interface State {
   swiping: boolean;
   movementX: number;
   startX: number;
-};
+}
 
 const initialState: State = {
   swiping: false,
@@ -25,11 +26,7 @@ const initialState: State = {
   startX: 0,
 };
 
-const Swipeable: React.FC<Props> = ({
-  xMovementTrigger,
-  onSwipe,
-  children,
-}) => {
+const Swipeable = ({ xMovementTrigger, onSwipe, children }: SwipeableProps) => {
   const [swipingState, setSwipingState] = useState(initialState);
 
   const onSwipeStart = (movementX: number, startX = 0) => {

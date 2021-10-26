@@ -1,46 +1,31 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import Slider from './Slider';
-import Indicator from './Indicator';
-import Arrow, { ArrowType } from './Arrow';
-import { SwipeDirection } from './Swipeable';
+import Slider from './slider';
+import Indicator from './indicator';
+import Arrow, { ArrowType } from './arrow';
+import { SwipeDirection } from './swipeable';
 import { getIndexForAction, matchBreakpoint } from './helpers';
 
-export type CarouselSettings = {
-  slidesToShow?: number;
-};
+import { CarouselWrapper, SliderWrapper } from './carousel.style';
 
-export type Breakpoint = {
+export interface CarouselSettings {
+  slidesToShow?: number;
+}
+
+export interface Breakpoint {
   size: number;
   settings: CarouselSettings;
-};
+}
 
-export type Props = CarouselSettings & {
+export interface CarouselProps extends CarouselSettings {
   breakpoints?: Breakpoint[];
-};
+  children?: React.ReactNode;
+}
 
-const CarouselWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-`;
-
-const SliderWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-`;
-
-const Component: React.FC<Props> = ({
+const Component = ({
   slidesToShow = 1,
   breakpoints,
   children,
-}) => {
+}: CarouselProps) => {
   const childrenCount = React.Children.count(children);
   const carouselSettings = {
     slidesToShow,
@@ -48,10 +33,10 @@ const Component: React.FC<Props> = ({
   const [activeSettings, setActiveSettings] = useState(
     matchBreakpoint(window.innerWidth, carouselSettings, breakpoints),
   );
-  const [{ previousActive, active, infiniteActive }, setActive] = useState({
+  const [{ previousActive, active, nextActive }, setActive] = useState({
     previousActive: 0,
     active: 0,
-    infiniteActive: 0,
+    nextActive: 0,
   });
 
   return (
@@ -66,7 +51,7 @@ const Component: React.FC<Props> = ({
         <Slider
           previousActive={previousActive}
           active={active}
-          infiniteActive={infiniteActive}
+          nextActive={nextActive}
           onWindowResize={() =>
             setActiveSettings(
               matchBreakpoint(window.innerWidth, carouselSettings, breakpoints),
@@ -97,7 +82,7 @@ const Component: React.FC<Props> = ({
       <Indicator
         items={childrenCount}
         slidesToShow={activeSettings.slidesToShow || slidesToShow}
-        active={infiniteActive}
+        active={nextActive}
         onClick={index =>
           setActive(getIndexForAction(active, index, childrenCount))
         }

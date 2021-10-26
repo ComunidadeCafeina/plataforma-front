@@ -2,18 +2,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import debounce from 'lodash.debounce';
-import { Props } from './Carousel';
-import Track from './Track';
-import Slide from './Slide';
-import Swipeable, { SwipeDirection } from './Swipeable';
+import { CarouselProps } from './carousel';
+import Track from './track';
+import Slide from './slide';
+import Swipeable, { SwipeDirection } from './swipeable';
 import { getPreSlideCount, getSliderStyles } from './helpers';
 
-type SliderProps = Props & {
+interface SliderProps extends CarouselProps {
   previousActive: number;
   active: number;
-  infiniteActive: number;
+  nextActive: number;
   onSwipe: (direction: SwipeDirection) => void;
-};
+  onWindowResize: () => void;
+}
 
 const Slider = styled.div`
   position: relative;
@@ -29,7 +30,6 @@ const renderSlides = (
   slideCount: number,
   slideWidth = 0,
   slidesToShow: number,
-  active: number,
 ) => {
   const slides: React.ReactNode[] = [];
   const preClones: React.ReactNode[] = [];
@@ -69,15 +69,15 @@ const renderSlides = (
   return [...preClones, ...slides, ...postClones];
 };
 
-const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
+const Component = ({
   children,
   previousActive,
   active,
-  infiniteActive,
+  nextActive,
   slidesToShow = 1,
   onWindowResize,
   onSwipe,
-}) => {
+}: SliderProps) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const slideCount = React.Children.count(children);
   const [sliderWidth, setSliderWidth] = useState(0);
@@ -121,7 +121,7 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
   }, [
     previousActive,
     active,
-    infiniteActive,
+    nextActive,
     slidesToShow,
     sliderWidth,
     slideCount,
@@ -134,17 +134,11 @@ const Component: React.FC<SliderProps & { onWindowResize: () => void }> = ({
           width={styles.trackWidth}
           previousActive={previousActive}
           active={active}
-          infiniteActive={infiniteActive}
+          nextActive={nextActive}
           slideWidth={styles.slideWidth}
           slideOffset={styles.slideOffset}
         >
-          {renderSlides(
-            children,
-            slideCount,
-            styles.slideWidth,
-            slidesToShow,
-            infiniteActive,
-          )}
+          {renderSlides(children, slideCount, styles.slideWidth, slidesToShow)}
         </Track>
       </Swipeable>
     </Slider>

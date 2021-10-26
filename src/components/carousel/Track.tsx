@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 import { getSlideAnimation } from './helpers';
 
-type Props = {
+interface TrackProps {
   previousActive: number;
   active: number;
-  infiniteActive: number;
+  nextActive: number;
   width?: number;
   slideWidth?: number;
   slideOffset?: number;
-};
+}
 
-const Track = styled.div.attrs<Props>(props => ({
+const Track = styled.div.attrs<TrackProps>(props => ({
   width: props.width,
   animation: getSlideAnimation(
     props.previousActive,
     props.active,
-    props.infiniteActive,
+    props.nextActive,
     props.slideWidth,
     props.slideOffset,
   ),
-}))<Props & { animation?: string }>`
+}))<TrackProps & { animation?: string }>`
   display: flex;
   flex-direction: row;
   position: relative;

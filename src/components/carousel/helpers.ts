@@ -1,19 +1,19 @@
-/* eslint-disable no-multi-assign */
 /* eslint-disable no-param-reassign */
+/* eslint-disable no-multi-assign */
 import { keyframes } from 'styled-components';
-import { Breakpoint, CarouselSettings } from './Carousel';
-import { SwipeDirection } from './Swipeable';
+import { Breakpoint, CarouselSettings } from './carousel';
+import { SwipeDirection } from './swipeable';
 
-type SlideCountParams = {
+interface SlideCountParams {
   slideCount: number;
   slidesToShow: number;
-};
+}
 
-type SliderStyleProps = {
+interface SliderStyleProps {
   sliderWidth: number;
   slideCount: number;
   slidesToShow?: number;
-};
+}
 
 export const getPreSlideCount = ({
   slideCount,
@@ -57,28 +57,28 @@ export const getIndexForAction = (
 ) => {
   let previousActive = current;
   let active = target;
-  let infiniteActive = target;
+  let nextActive = target;
 
-  if (infiniteActive < 0) {
-    infiniteActive += childrenCount;
+  if (nextActive < 0) {
+    nextActive += childrenCount;
 
     if (previousActive < 0) {
       previousActive = current += childrenCount;
-      active = infiniteActive;
+      active = nextActive;
     }
-  } else if (infiniteActive > childrenCount - 1) {
-    infiniteActive -= childrenCount;
+  } else if (nextActive > childrenCount - 1) {
+    nextActive -= childrenCount;
 
     if (previousActive > childrenCount - 1) {
       previousActive = current -= childrenCount;
-      active = infiniteActive;
+      active = nextActive;
     }
   }
 
   return {
     previousActive,
     active,
-    infiniteActive,
+    nextActive,
   };
 };
 
@@ -155,7 +155,7 @@ const getTransform = (percentage: string, xValue: number) => `
 export const getSlideAnimation = (
   previousActive: number,
   active: number,
-  infiniteActive: number,
+  nextActive: number,
   slideWidth?: number,
   slideOffset?: number,
 ) => {
@@ -167,10 +167,9 @@ export const getSlideAnimation = (
     start = previousActive * slideDelta + slideOffset;
     end = active * slideDelta + slideOffset;
 
-    if (infiniteActive !== active) {
-      end = infiniteActive * slideDelta + slideOffset;
-      start =
-        infiniteActive > previousActive ? end + slideDelta : end - slideDelta;
+    if (nextActive !== active) {
+      end = nextActive * slideDelta + slideOffset;
+      start = nextActive > previousActive ? end + slideDelta : end - slideDelta;
     }
   }
 

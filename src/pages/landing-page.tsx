@@ -1,11 +1,11 @@
 import React from 'react';
-import Carousel from '../components/carousel/Carousel';
+import Carousel from '../components/carousel/carousel';
 import { Icon, ContentContainer, Title } from '../components';
 import { IconBox, Description, CardsContainer } from './landing-page.style';
 import { Card } from '../components/card';
 import projects from './projects';
 
-const LandingPage = (): React.ReactElement => (
+const LandingPage = () => (
   <ContentContainer>
     <Title>Conheça nossos projetos</Title>
 
