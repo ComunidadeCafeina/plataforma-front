@@ -5,10 +5,15 @@ import { Icon, Icons } from '..';
 interface ButtonProps {
   text: string;
   icon: Icons;
+  onClick: () => void;
 }
 
-export const Button = ({ text, icon }: ButtonProps): React.ReactElement => (
-  <StyledButton type="button">
+export const Button = ({
+  text,
+  icon,
+  onClick,
+}: ButtonProps): React.ReactElement => (
+  <StyledButton type="button" onClick={onClick}>
     {text} <Icon icon={icon} />
   </StyledButton>
 );

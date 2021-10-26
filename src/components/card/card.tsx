@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Title, Divisor, Description } from './card.style';
 import { Icon, Button, Icons } from '..';
 
@@ -18,16 +17,22 @@ export const Card = ({
   description,
   icon,
   link,
-}: CardProps): React.ReactElement => (
-  <Container id={id}>
-    <Icon icon={brandIcon} />
+}: CardProps): React.ReactElement => {
+  const handleClick = () => {
+    window.open(link);
+  };
 
-    <Title>{title}</Title>
+  return (
+    <Container id={id}>
+      <Icon icon={brandIcon} />
 
-    <Divisor />
+      <Title>{title}</Title>
 
-    <Description>{description}</Description>
+      <Divisor />
 
-    <Button text="Entrar" icon={icon} />
-  </Container>
-);
+      <Description>{description}</Description>
+
+      <Button text="Entrar" icon={icon} onClick={handleClick} />
+    </Container>
+  );
+};

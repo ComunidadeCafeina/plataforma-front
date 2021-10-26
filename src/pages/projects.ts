@@ -6,7 +6,7 @@ const projects = [
     title: 'Comunidade Compiladoras',
     description: 'Comunidade de apoio e engajamento',
     icon: 'cadeado-botao' as Icons,
-    link: '',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSeh8rIqDCip_i3B29Zbjmw-8dM80d8ins1qrjjuq5JjlcYW-Q/viewform',
   },
   {
     brandIcon: 'vagas' as Icons,
@@ -14,7 +14,7 @@ const projects = [
     description:
       'Canal do Telegram com vagas inclusivas e para iniciantes em TI',
     icon: 'seta-direita' as Icons,
-    link: '',
+    link: 'https://t.me/CafeinaVagas',
   },
   {
     brandIcon: 'central-programadora' as Icons,
@@ -22,7 +22,7 @@ const projects = [
     description:
       'Servidor no Discord com diversos canais para ajudar no seu desenvolvimento profissional',
     icon: 'cadeado-botao' as Icons,
-    link: '',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSeh8rIqDCip_i3B29Zbjmw-8dM80d8ins1qrjjuq5JjlcYW-Q/viewform',
   },
   {
     brandIcon: 'central-compiladoras' as Icons,
@@ -30,7 +30,7 @@ const projects = [
     description:
       'Um canal no Telegram para ficar em dia com todas as notícias e avisos da comunidade',
     icon: 'seta-direita' as Icons,
-    link: '',
+    link: 'https://t.me/Compiladoras',
   },
   {
     brandIcon: 'literaria' as Icons,
@@ -38,7 +38,7 @@ const projects = [
     description:
       'Nosso clube do livro, com leitura coletiva e podcasts literários, via Telegram',
     icon: 'seta-direita' as Icons,
-    link: '',
+    link: 'https://t.me/CafeinaLiteraria',
   },
 ];
 
