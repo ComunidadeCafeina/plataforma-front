@@ -5,40 +5,59 @@ import { IconBox, Description, CardsContainer } from './landing-page.style';
 import { Card } from '../components/card';
 import projects from './projects';
 
-const LandingPage = () => (
-  <ContentContainer>
-    <Title>Conheça nossos projetos</Title>
+interface ProjectsListProps {
+  children: React.ReactNode;
+}
 
-    <Description>
-      <IconBox>
-        <Icon icon="cadeado" />
-      </IconBox>
-      Alguns projetos são exclusivos para pessoas que fazem parte da comunidade
-    </Description>
+const ProjectsList = ({ children }: ProjectsListProps) => {
+  const sizeScreen = window.innerWidth;
 
-    <CardsContainer>
-      <Carousel
-        breakpoints={[
-          {
-            size: 719,
-            settings: {
-              slidesToShow: 1,
-            },
+  return sizeScreen < 720 ? (
+    <>{children}</>
+  ) : (
+    <Carousel
+      breakpoints={[
+        {
+          size: 719,
+          settings: {
+            slidesToShow: 1,
           },
-          {
-            size: 991,
-            settings: {
-              slidesToShow: 2,
-            },
+        },
+        {
+          size: 991,
+          settings: {
+            slidesToShow: 2,
           },
-        ]}
-      >
-        {projects.map((project, index) => (
-          <Card key={project.brandIcon} {...project} id={`card-${index}`} />
-        ))}
-      </Carousel>
-    </CardsContainer>
-  </ContentContainer>
-);
+        },
+      ]}
+    >
+      {children}
+    </Carousel>
+  );
+};
+
+const LandingPage = () => {
+  return (
+    <ContentContainer>
+      <Title>Conheça nossos projetos</Title>
+
+      <Description>
+        <IconBox>
+          <Icon icon="cadeado" />
+        </IconBox>
+        Alguns projetos são exclusivos para pessoas que fazem parte da
+        comunidade
+      </Description>
+
+      <CardsContainer>
+        <ProjectsList>
+          {projects.map((project, index) => (
+            <Card key={project.brandIcon} {...project} id={`card-${index}`} />
+          ))}
+        </ProjectsList>
+      </CardsContainer>
+    </ContentContainer>
+  );
+};
 
 export default LandingPage;

@@ -15,6 +15,11 @@ export const Container = styled.div`
   text-align: center;
   margin: auto;
 
+  @media screen and (max-width: 720px) {
+    margin: 0 0 32px 0;
+    width: 100%;
+  }
+
   @media screen and (min-width: 720px) and (max-width: 992px) {
     height: 400px;
   }
