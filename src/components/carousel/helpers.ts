@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components';
+import { Keyframes, keyframes } from 'styled-components';
 import { Breakpoint, CarouselSettings } from './carousel';
 import { SwipeDirection } from './swipeable';
 
@@ -16,21 +16,21 @@ interface SliderStyleProps {
 export const getPreSlideCount = ({
   slideCount,
   slidesToShow,
-}: SlideCountParams) => {
+}: SlideCountParams): number => {
   return slideCount < slidesToShow ? slidesToShow : slideCount;
 };
 
 export const getPostSlideCount = ({
   slideCount,
   slidesToShow,
-}: SlideCountParams) => {
+}: SlideCountParams): number => {
   return slideCount + slidesToShow + 1;
 };
 
 export const getTotalSlideCount = ({
   slideCount,
   slidesToShow,
-}: SlideCountParams) => {
+}: SlideCountParams): number => {
   if (slideCount === 1) {
     return 1;
   }
@@ -48,11 +48,17 @@ export const getTotalSlideCount = ({
   );
 };
 
+type GetIndexForAction = {
+  previousActive: number;
+  active: number;
+  nextActive: number;
+};
+
 export const getIndexForAction = (
   current: number,
   target: number,
   childrenCount: number,
-) => {
+): GetIndexForAction => {
   let previousActive = current;
   let active = target;
   let nextActive = target;
@@ -84,7 +90,7 @@ export const matchBreakpoint = (
   size: number,
   settings: CarouselSettings,
   breakpoints?: Breakpoint[],
-) => {
+): CarouselSettings => {
   if (breakpoints && breakpoints.length > 0) {
     const breakpoint = breakpoints
       .sort((breakpointA, breakpointB) => breakpointB.size - breakpointA.size)
@@ -96,7 +102,7 @@ export const matchBreakpoint = (
   return settings;
 };
 
-export const getSwipeDirection = (movementX: number) => {
+export const getSwipeDirection = (movementX: number): SwipeDirection => {
   if (movementX < 0) {
     return SwipeDirection.Left;
   }
@@ -104,14 +110,20 @@ export const getSwipeDirection = (movementX: number) => {
   return SwipeDirection.Right;
 };
 
-export const isValidSwipe = (movement: number, trigger: number) =>
+export const isValidSwipe = (movement: number, trigger: number): boolean =>
   trigger < Math.abs(movement);
+
+type GetSliderStyles = {
+  slideOffset: number | undefined;
+  trackWidth: number | undefined;
+  slideWidth: number;
+};
 
 export const getSliderStyles = ({
   slideCount,
   slidesToShow = 1,
   sliderWidth,
-}: SliderStyleProps) => {
+}: SliderStyleProps): GetSliderStyles => {
   let slideWidth;
   let slideOffset;
   let slidesToOffset = 0;
@@ -156,7 +168,7 @@ export const getSlideAnimation = (
   nextActive: number,
   slideWidth?: number,
   slideOffset?: number,
-) => {
+): Keyframes => {
   let start = 0;
   let end = 0;
 

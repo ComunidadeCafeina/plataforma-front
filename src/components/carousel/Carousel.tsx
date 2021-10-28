@@ -25,7 +25,7 @@ const Component = ({
   slidesToShow = 1,
   breakpoints,
   children,
-}: CarouselProps) => {
+}: CarouselProps): React.ReactElement => {
   const childrenCount = React.Children.count(children);
   const carouselSettings = {
     slidesToShow,

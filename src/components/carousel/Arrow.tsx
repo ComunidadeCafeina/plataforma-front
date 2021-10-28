@@ -29,7 +29,7 @@ const Arrow = styled.button`
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
-const Component = ({ type, onClick }: ArrowProps) => (
+const Component = ({ type, onClick }: ArrowProps): React.ReactElement => (
   <Container>
     {type === ArrowType.previous ? (
       <Arrow onClick={onClick}>

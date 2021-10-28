@@ -77,7 +77,7 @@ const Component = ({
   slidesToShow = 1,
   onWindowResize,
   onSwipe,
-}: SliderProps) => {
+}: SliderProps): React.ReactElement => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const slideCount = React.Children.count(children);
   const [sliderWidth, setSliderWidth] = useState(0);

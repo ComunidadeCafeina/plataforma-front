@@ -21,7 +21,7 @@ const Component = ({
   slidesToShow,
   active,
   onClick,
-}: IndicatorProps) => {
+}: IndicatorProps): React.ReactElement => {
   return (
     <IndicatorWrapper>
       {[...Array(getNumberOfIndicators(items, slidesToShow))].map((_, i) => (

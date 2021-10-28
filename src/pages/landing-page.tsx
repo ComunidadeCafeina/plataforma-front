@@ -34,7 +34,7 @@ const ProjectsList = ({ children }: ProjectsListProps) => {
   );
 };
 
-const LandingPage = () => {
+const LandingPage = (): React.ReactElement => {
   return (
     <ContentContainer>
       <Title>Conheça nossos projetos</Title>

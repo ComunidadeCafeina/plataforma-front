@@ -26,7 +26,11 @@ const initialState: State = {
   startX: 0,
 };
 
-const Swipeable = ({ xMovementTrigger, onSwipe, children }: SwipeableProps) => {
+const Swipeable = ({
+  xMovementTrigger,
+  onSwipe,
+  children,
+}: SwipeableProps): React.ReactElement => {
   const [swipingState, setSwipingState] = useState(initialState);
 
   const onSwipeStart = (movementX: number, startX = 0) => {
