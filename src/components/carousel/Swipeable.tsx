@@ -99,8 +99,8 @@ const Swipeable = ({ xMovementTrigger, onSwipe, children }: SwipeableProps) => {
 
   const onSwipeEnd = () => {
     if (swipingState.swiping) {
-      if (isValidSwipe(swipingState.movementX, xMovementTrigger)) {
-        if (onSwipe) onSwipe(getSwipeDirection(swipingState.movementX));
+      if (isValidSwipe(swipingState.movementX, xMovementTrigger) && onSwipe) {
+        onSwipe(getSwipeDirection(swipingState.movementX));
       }
 
       setSwipingState({

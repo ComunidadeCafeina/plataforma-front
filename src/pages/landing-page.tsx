@@ -12,27 +12,25 @@ interface ProjectsListProps {
 const ProjectsList = ({ children }: ProjectsListProps) => {
   const sizeScreen = window.innerWidth;
 
+  const carouselBreakpoints = [
+    {
+      size: 719,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+    {
+      size: 991,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+  ];
+
   return sizeScreen < 720 ? (
     <>{children}</>
   ) : (
-    <Carousel
-      breakpoints={[
-        {
-          size: 719,
-          settings: {
-            slidesToShow: 1,
-          },
-        },
-        {
-          size: 991,
-          settings: {
-            slidesToShow: 2,
-          },
-        },
-      ]}
-    >
-      {children}
-    </Carousel>
+    <Carousel breakpoints={carouselBreakpoints}>{children}</Carousel>
   );
 };
 

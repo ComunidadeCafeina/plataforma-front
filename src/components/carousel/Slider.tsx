@@ -42,17 +42,17 @@ const renderSlides = (
       </Slide>,
     );
 
-    const preCloneNo = slideCount - index;
+    const preCloneNumber = slideCount - index;
 
     if (
-      preCloneNo <=
+      preCloneNumber <=
       getPreSlideCount({
         slideCount,
         slidesToShow,
       })
     ) {
       preClones.push(
-        <Slide width={slideWidth} key={`slide-pre${-preCloneNo}`}>
+        <Slide width={slideWidth} key={`slide-pre${-preCloneNumber}`}>
           {child}
         </Slide>,
       );

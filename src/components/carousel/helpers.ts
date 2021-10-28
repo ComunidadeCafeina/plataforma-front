@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-multi-assign */
 import { keyframes } from 'styled-components';
 import { Breakpoint, CarouselSettings } from './carousel';
 import { SwipeDirection } from './swipeable';
@@ -63,14 +61,14 @@ export const getIndexForAction = (
     nextActive += childrenCount;
 
     if (previousActive < 0) {
-      previousActive = current += childrenCount;
+      previousActive = current + childrenCount;
       active = nextActive;
     }
   } else if (nextActive > childrenCount - 1) {
     nextActive -= childrenCount;
 
     if (previousActive > childrenCount - 1) {
-      previousActive = current -= childrenCount;
+      previousActive = current - childrenCount;
       active = nextActive;
     }
   }

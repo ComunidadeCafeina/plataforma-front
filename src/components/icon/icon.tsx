@@ -15,12 +15,8 @@ export const Icon: React.FC<IconProps> = ({ icon }) =>
       height={icons[icon].height}
       fill="none"
     >
-      {icons[icon].paths.map((path, index) => (
-        <path
-          // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          {...path}
-        />
+      {icons[icon].paths.map(path => (
+        <path key={`${path}-${Math.random() * (100 - 1) + 1}`} {...path} />
       ))}
     </StyledSVG>
   ) : null;
