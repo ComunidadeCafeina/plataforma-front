@@ -1,7 +1,5 @@
-/* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import debounce from 'lodash.debounce';
 import { CarouselProps } from './carousel';
 import Track from './track';
 import Slide from './slide';
@@ -37,7 +35,7 @@ const renderSlides = (
 
   React.Children.forEach(children, (child, index) => {
     slides.push(
-      <Slide width={slideWidth} key={`slide${index}`}>
+      <Slide width={slideWidth} key={`slide${Math.random() * (100 - 1) + 1}`}>
         {child}
       </Slide>,
     );
@@ -91,12 +89,12 @@ const Component = ({
 
   // Handle window resize
   useEffect(() => {
-    const handleWindowResize = debounce(() => {
+    const handleWindowResize = () => {
       onWindowResize();
       setSliderWidth(
         sliderRef.current ? Math.ceil(sliderRef.current.offsetWidth) : 0,
       );
-    }, 100);
+    };
 
     // Sets initial dimensions
     setSliderWidth(
