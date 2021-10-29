@@ -1,12 +1,31 @@
 import { Container, Title, Divisor, Description } from './card.style';
-import { Icon, Button, Icons } from '..';
+import { Button } from '..';
+import {
+  ProgrammerCentralIcon,
+  JobsIcon,
+  CompiladorasCommunityIcon,
+  LiteraryCaffeineIcon,
+  CompiladorasCentralIcon,
+} from '../../icons';
+
+type brandIconOptionType = {
+  [key: string]: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
+};
+
+const brandIconOptions: brandIconOptionType = {
+  central: CompiladorasCentralIcon,
+  jobs: JobsIcon,
+  community: CompiladorasCommunityIcon,
+  literary: LiteraryCaffeineIcon,
+  programmer: ProgrammerCentralIcon,
+};
 
 interface CardProps {
   id: string;
-  brandIcon: Icons;
+  brandIcon: keyof typeof brandIconOptions;
   title: string;
   description: string;
-  icon: Icons;
+  restrict: boolean;
   link: string;
 }
 
@@ -15,16 +34,21 @@ export const Card = ({
   brandIcon,
   title,
   description,
-  icon,
+  restrict,
   link,
 }: CardProps): React.ReactElement => {
   const handleClick = () => {
     window.open(link);
   };
 
+  const BrandIcon = () => {
+    const Component = brandIconOptions[brandIcon];
+    return <Component />;
+  };
+
   return (
     <Container id={id}>
-      <Icon icon={brandIcon} />
+      <BrandIcon />
 
       <Title>{title}</Title>
 
@@ -32,7 +56,7 @@ export const Card = ({
 
       <Description>{description}</Description>
 
-      <Button text="Entrar" icon={icon} onClick={handleClick} />
+      <Button text="Entrar" restrict={restrict} onClick={handleClick} />
     </Container>
   );
 };

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Icon } from '..';
+import { LeftArrowIcon, RightArrowIcon } from '../../icons';
 
 export enum ArrowType {
   previous = 'previous',
@@ -33,11 +33,11 @@ const Component = ({ type, onClick }: ArrowProps): React.ReactElement => (
   <Container>
     {type === ArrowType.previous ? (
       <Arrow onClick={onClick}>
-        <Icon icon="seta-esquerda" />
+        <LeftArrowIcon />
       </Arrow>
     ) : (
       <Arrow onClick={onClick}>
-        <Icon icon="seta-direita" />
+        <RightArrowIcon />
       </Arrow>
     )}
   </Container>

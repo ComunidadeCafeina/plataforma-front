@@ -1,19 +1,19 @@
 import React from 'react';
 import { StyledButton } from './button.style';
-import { Icon, Icons } from '..';
+import { RestrictProjectIcon, RightArrowIcon } from '../../icons';
 
 interface ButtonProps {
   text: string;
-  icon: Icons;
+  restrict: boolean;
   onClick: () => void;
 }
 
 export const Button = ({
   text,
-  icon,
+  restrict,
   onClick,
 }: ButtonProps): React.ReactElement => (
   <StyledButton type="button" onClick={onClick}>
-    {text} <Icon icon={icon} />
+    {text} {restrict ? <RestrictProjectIcon /> : <RightArrowIcon />}
   </StyledButton>
 );
