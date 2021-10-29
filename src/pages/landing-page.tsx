@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from '../components/carousel';
-import { Icon, ContentContainer, Title } from '../components';
+import { ContentContainer, Title } from '../components';
 import { IconBox, Description, CardsContainer } from './landing-page.style';
 import { Card } from '../components/card';
 import projects from './projects';
