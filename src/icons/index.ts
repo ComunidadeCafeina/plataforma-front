@@ -6,3 +6,4 @@ export { RightArrowIcon } from './right-arrow-icon';
 export { ProgrammerCentralIcon } from './programmer-central-icon';
 export { CompiladorasCentralIcon } from './compiladoras-central-icon';
 export { LiteraryCaffeineIcon } from './literary-caffeine';
+export { RestrictProjectIcon } from './restrict-project-icon';
