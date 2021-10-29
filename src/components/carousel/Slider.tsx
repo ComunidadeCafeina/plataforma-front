@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { CarouselProps } from './carousel';
-import Track from './track';
-import Slide from './slide';
-import Swipeable, { SwipeDirection } from './swipeable';
+import { CarouselProps } from './Carousel';
+import Track from './Track';
+import Slide from './Slide';
+import Swipeable, { SwipeDirection } from './Swipeable';
 import { getPreSlideCount, getSliderStyles } from './helpers';
 
 interface SliderProps extends CarouselProps {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Slider from './slider';
-import Indicator from './indicator';
-import Arrow, { ArrowType } from './arrow';
-import { SwipeDirection } from './swipeable';
+import Slider from './Slider';
+import Indicator from './Indicator';
+import Arrow, { ArrowType } from './Arrow';
+import { SwipeDirection } from './Swipeable';
 import { getIndexForAction, matchBreakpoint } from './helpers';
 
 import { CarouselWrapper, SliderWrapper } from './carousel.style';

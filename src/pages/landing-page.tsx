@@ -1,9 +1,10 @@
 import React from 'react';
-import Carousel from '../components/carousel/carousel';
+import Carousel from '../components/carousel';
 import { Icon, ContentContainer, Title } from '../components';
 import { IconBox, Description, CardsContainer } from './landing-page.style';
 import { Card } from '../components/card';
 import projects from './projects';
+import { LockIcon } from '../icons';
 
 interface ProjectsListProps {
   children: React.ReactNode;
@@ -41,7 +42,7 @@ const LandingPage = (): React.ReactElement => {
 
       <Description>
         <IconBox>
-          <Icon icon="cadeado" />
+          <LockIcon />
         </IconBox>
         Alguns projetos são exclusivos para pessoas que fazem parte da
         comunidade

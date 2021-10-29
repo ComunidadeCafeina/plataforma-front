@@ -1,6 +1,6 @@
 import { Keyframes, keyframes } from 'styled-components';
-import { Breakpoint, CarouselSettings } from './carousel';
-import { SwipeDirection } from './swipeable';
+import { Breakpoint, CarouselSettings } from './Carousel';
+import { SwipeDirection } from './Swipeable';
 
 interface SlideCountParams {
   slideCount: number;

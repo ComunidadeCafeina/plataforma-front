@@ -6,6 +6,7 @@ export const IconBox = styled.div`
 
 export const Description = styled.div`
   display: flex;
+  align-items: center;
   font-size: 20px;
 `;
 
