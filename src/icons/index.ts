@@ -1,3 +1,12 @@
+export { BlogIcon } from './blog-icon';
+export { FacebookIcon } from './facebook-icon';
+export { GithubIcon } from './github-icon';
+export { InstagramIcon } from './instagram-icon';
+export { LinkedInIcon } from './linkedin-icon';
+export { PodcastIcon } from './podcast-icon';
+export { TwitterIcon } from './twitter-icon';
+export { YouTubeIcon } from './youtube-icon';
+
 export { LockIcon } from './lock-icon';
 export { CompiladorasCommunityIcon } from './compiladoras-community-icon';
 export { JobsIcon } from './jobs-icon';
