@@ -17,5 +17,5 @@ export const StyledButtom = styled.button`
 `;
 
 export const ContentContainer = styled.div`
-  width: 13rem;
+  width: 15rem;
 `;

@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,5 +35,5 @@ export const ContentContainer = styled.div`
 `;
 
 export const WrapperMobileLogo = styled.div`
-  margin: 2rem 0 0 1rem;
+  margin: 0.5rem 0 0 1rem;
 `;
