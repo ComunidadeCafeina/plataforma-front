@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledButtom = styled.button`
+export const StyledButton = styled.button`
   background-color: #fe393b;
   width: inherit;
   display: flex;
