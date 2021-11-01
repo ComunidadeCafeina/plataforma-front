@@ -2,42 +2,42 @@ const socialNetworks = [
   {
     text: 'Instagram',
     icon: 'instagram',
-    link: '',
+    link: 'https://www.instagram.com/compiladoras/',
   },
   {
     text: 'Facebook',
     icon: 'facebook',
-    link: '',
+    link: 'https://www.facebook.com/compiladoras',
   },
   {
     text: 'Twitter',
     icon: 'twitter',
-    link: '',
+    link: 'https://twitter.com/compiladoras',
   },
   {
     text: 'YouTube',
     icon: 'youtube',
-    link: '',
+    link: 'https://www.youtube.com/channel/UCGWQeMQAYnWINj5_0ViCAjw',
   },
   {
     text: 'LinkedIn',
     icon: 'linkedin',
-    link: '',
+    link: 'https://www.linkedin.com/company/compiladoras/',
   },
   {
     text: 'Podcast',
     icon: 'podcast',
-    link: '',
+    link: 'https://anchor.fm/compiladoras',
   },
   {
     text: 'Github',
     icon: 'github',
-    link: '',
+    link: 'https://github.com/compiladoras',
   },
   {
     text: 'Blog',
     icon: 'blog',
-    link: '',
+    link: 'https://dev.to/compiladoras',
   },
 ];
 
