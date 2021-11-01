@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   width: 50%;
+
   > * {
     margin-left: 142px;
-    color: #ffffff;
     text-decoration: none;
+    color: #ffffff;
     font-size: 1.25rem;
     font-weight: bold;
   }

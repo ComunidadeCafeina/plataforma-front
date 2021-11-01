@@ -1,29 +1,34 @@
 import React from 'react';
-import Logo from '../../../../assets/header.png';
+import { HeaderButton } from '../../../../components/header-button';
 import { Nav } from '../../../../components/nav';
 import {
-  HeaderContainer,
+  HeaderWrapper,
   HeaderParagraph,
   HeaderTitle,
-  Wrapper,
+  ContentContainer,
 } from './header.style';
 
 export const Header = () => {
+  const handleClick = () => {
+    window.open(
+      'https://docs.google.com/forms/d/e/1FAIpQLSeh8rIqDCip_i3B29Zbjmw-8dM80d8ins1qrjjuq5JjlcYW-Q/viewform',
+    );
+  };
+
   return (
-    <>
-      {/* <Wrapper>
-        <img src={Logo} alt="logo-compiladoras-de-cafeina" />
-        <Nav />
-      </Wrapper> */}
+    <ContentContainer>
       <Nav />
-      <HeaderContainer>
+
+      <HeaderWrapper>
         <HeaderTitle>Que bom te ver por aqui!</HeaderTitle>
         <HeaderParagraph>
           Somos as <strong>Compiladoras de Cafeína</strong>, uma comunidade de
           acolhimento, apoio e educação para mulherese pessoas trans iniciantes
           em TI.
         </HeaderParagraph>
-      </HeaderContainer>
-    </>
+      </HeaderWrapper>
+
+      <HeaderButton onClick={handleClick} />
+    </ContentContainer>
   );
 };

@@ -5,18 +5,15 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  background-color: #000000;
 `;
 
 export const HeaderTitle = styled.h1`
-  margin-top: 5rem;
+  margin: 7rem 0 4rem 0;
   font-size: 3.5rem;
   color: #ffffff;
 `;
 
-export const HeaderContainer = styled.div`
-  max-width: 100%;
-  background-color: #000000;
+export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,4 +25,13 @@ export const HeaderParagraph = styled.p`
   font-size: 1.25rem;
   text-align: center;
   max-width: 70ch;
+  line-height: 150%;
+`;
+
+export const ContentContainer = styled.div`
+  max-width: 100%;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

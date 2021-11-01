@@ -9,7 +9,7 @@ import { ButtonsContainer } from './social-networks.style';
 import socialNetworks from './social-networks-mock';
 
 const SocialNetworksSection = (): React.ReactElement => (
-  <ContentContainer>
+  <ContentContainer id="redes-sociais" className="smooth-scroll">
     <Title>Nossas redes</Title>
 
     <Description>
