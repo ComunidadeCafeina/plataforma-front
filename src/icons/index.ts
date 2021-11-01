@@ -16,3 +16,5 @@ export { ProgrammerCentralIcon } from './programmer-central-icon';
 export { CompiladorasCentralIcon } from './compiladoras-central-icon';
 export { LiteraryCaffeineIcon } from './literary-caffeine';
 export { RestrictProjectIcon } from './restrict-project-icon';
+export { CompiladorasMobileLogo } from './compiladoras-mobile-logo';
+export { CompiladorasDesktopLogo } from './compiladoras-desktop-logo';

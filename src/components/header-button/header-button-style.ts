@@ -16,6 +16,6 @@ export const StyledButtom = styled.button`
   cursor: pointer;
 `;
 
-export const ButtonContainer = styled.div`
+export const ContentContainer = styled.div`
   width: 13rem;
 `;

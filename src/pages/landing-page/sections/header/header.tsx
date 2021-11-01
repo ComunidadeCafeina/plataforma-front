@@ -23,7 +23,7 @@ export const Header = () => {
         <HeaderTitle>Que bom te ver por aqui!</HeaderTitle>
         <HeaderParagraph>
           Somos as <strong>Compiladoras de Cafeína</strong>, uma comunidade de
-          acolhimento, apoio e educação para mulherese pessoas trans iniciantes
+          acolhimento, apoio e educação para mulheres e pessoas trans iniciantes
           em TI.
         </HeaderParagraph>
       </HeaderWrapper>

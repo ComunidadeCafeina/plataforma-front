@@ -1,19 +1,21 @@
 import React from 'react';
-import { NavContainer, Wrapper } from './nav.style';
-
-import Logo from '../../assets/header.png';
+import { ContentContainer, Wrapper, WrapperMobileLogo } from './nav.style';
+import { CompiladorasMobileLogo, CompiladorasDesktopLogo } from '../../icons';
 
 export const Nav = () => {
   return (
-    <NavContainer>
-      <img src={Logo} alt="logo-compiladoras-de-cafeina" />
-      <Wrapper>
+    <ContentContainer>
+      <WrapperMobileLogo>
+        <CompiladorasMobileLogo className="mobile-logo" />
+      </WrapperMobileLogo>
+      <CompiladorasDesktopLogo className="desktop" />
+      <Wrapper className="desktop">
         <a href="#projetos">Projetos</a>
 
         <a href="#eventos">Eventos</a>
 
         <a href="#redes-sociais">Redes Sociais</a>
       </Wrapper>
-    </NavContainer>
+    </ContentContainer>
   );
 };

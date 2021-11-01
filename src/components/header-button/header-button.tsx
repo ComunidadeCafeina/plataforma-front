@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeartIcon } from '../../icons/heart-icon';
-import { ButtonContainer, StyledButtom } from './header-button-style';
+import { ContentContainer, StyledButtom } from './header-button-style';
 
 interface HeaderButtonProps {
   onClick: () => void;
@@ -8,11 +8,11 @@ interface HeaderButtonProps {
 
 export const HeaderButton = ({ onClick }: HeaderButtonProps) => {
   return (
-    <ButtonContainer>
+    <ContentContainer>
       <StyledButtom onClick={onClick}>
         Quero fazer parte
         <HeartIcon />
       </StyledButtom>
-    </ButtonContainer>
+    </ContentContainer>
   );
 };
