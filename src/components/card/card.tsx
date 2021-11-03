@@ -1,5 +1,5 @@
 import { Container, Title, Divisor, Description } from './card.style';
-import { Button } from '..';
+import { CardButton } from '..';
 import {
   ProgrammerCentralIcon,
   JobsIcon,
@@ -56,7 +56,7 @@ export const Card = ({
 
       <Description>{description}</Description>
 
-      <Button text="Entrar" restrict={restrict} onClick={handleClick} />
+      <CardButton text="Entrar" restrict={restrict} onClick={handleClick} />
     </Container>
   );
 };

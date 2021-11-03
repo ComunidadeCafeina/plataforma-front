@@ -1,18 +1,18 @@
 import React from 'react';
-import { StyledButton } from './button.style';
+import { StyledButton } from './card-button.style';
 import { RestrictProjectIcon, RightArrowIcon } from '../../icons';
 
-interface ButtonProps {
+interface CardButtonProps {
   text: string;
   restrict: boolean;
   onClick: () => void;
 }
 
-export const Button = ({
+export const CardButton = ({
   text,
   restrict,
   onClick,
-}: ButtonProps): React.ReactElement => (
+}: CardButtonProps): React.ReactElement => (
   <StyledButton type="button" onClick={onClick}>
     {text} {restrict ? <RestrictProjectIcon /> : <RightArrowIcon />}
   </StyledButton>
