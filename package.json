@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash.debounce": "^4.0.6",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "eslint-config-airbnb": "^18.2.1",
