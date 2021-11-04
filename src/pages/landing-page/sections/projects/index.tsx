@@ -40,7 +40,7 @@ const ProjectsList = ({ children }: ProjectsListProps) => {
 };
 
 const ProjectsSection = (): React.ReactElement => (
-  <ContentContainer>
+  <ContentContainer id="projetos">
     <Title>Conheça nossos projetos</Title>
 
     <Description>
