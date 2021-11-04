@@ -8,7 +8,7 @@ import {
   ContentContainer,
 } from './header.style';
 
-export const Header = () => {
+export const Header = (): React.ReactElement => {
   const handleClick = () => {
     window.open(
       'https://docs.google.com/forms/d/e/1FAIpQLSeh8rIqDCip_i3B29Zbjmw-8dM80d8ins1qrjjuq5JjlcYW-Q/viewform',

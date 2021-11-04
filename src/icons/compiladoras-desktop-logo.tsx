@@ -2,7 +2,7 @@ import React from 'react';
 
 export const CompiladorasDesktopLogo = (
   props: React.SVGProps<SVGSVGElement>,
-) => {
+): JSX.Element => {
   return (
     <svg
       width={223}

@@ -3,8 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
-  // min-width: 50%;
-
   > * {
     margin-left: 50px;
     text-decoration: none;
@@ -27,7 +25,7 @@ export const ContentContainer = styled.div`
 
   @media (max-width: 720px) {
     justify-content: flex-start;
-    .desktop {
+    .desktop-logo {
       display: none;
     }
     .mobile-logo {

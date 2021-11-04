@@ -1,6 +1,8 @@
 import React from 'react';
 
-export const HeartIcon = (props: React.SVGProps<SVGSVGElement>) => {
+export const HeartIcon = (
+  props: React.SVGProps<SVGSVGElement>,
+): JSX.Element => {
   return (
     <svg
       width={23}

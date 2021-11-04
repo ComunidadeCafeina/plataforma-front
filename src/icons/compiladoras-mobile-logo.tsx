@@ -2,7 +2,7 @@ import React from 'react';
 
 export const CompiladorasMobileLogo = (
   props: React.SVGProps<SVGSVGElement>,
-) => {
+): JSX.Element => {
   return (
     <svg
       width={92}
