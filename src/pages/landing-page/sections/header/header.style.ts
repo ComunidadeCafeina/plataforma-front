@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../../../styles/colors';
+import fonts from '../../../../styles/fonts';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ export const Wrapper = styled.div`
 export const HeaderTitle = styled.h1`
   margin: 7rem 0 4rem 0;
   text-align: center;
-  font-size: 3.5rem;
+  font-size: ${fonts.sizes.xl};
   color: ${colors.white};
   @media (max-width: 720px) {
     text-align: left;
@@ -28,7 +29,7 @@ export const HeaderWrapper = styled.div`
 
 export const HeaderParagraph = styled.p`
   color: ${colors.white};
-  font-size: 1.25rem;
+  font-size: ${fonts.sizes.m};
   text-align: center;
   max-width: 70ch;
   line-height: 150%;

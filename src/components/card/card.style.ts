@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 
 export const Container = styled.div`
   display: flex;
@@ -28,7 +29,7 @@ export const Container = styled.div`
 
 export const Title = styled.p`
   margin: auto;
-  font-size: 20px;
+  font-size: ${fonts.sizes.m};
   font-weight: 700;
   line-height: 30px;
 `;
@@ -46,7 +47,7 @@ export const Description = styled.p`
   text-align: center;
   margin: 24px 0;
   height: 90px;
-  font-size: 16px;
+  font-size: ${fonts.sizes.s};
   font-weight: 400;
   line-height: 24px;
 `;

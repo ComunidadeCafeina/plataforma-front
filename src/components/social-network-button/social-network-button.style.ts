@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 
 export const StyledButton = styled.button`
   display: flex;
@@ -15,7 +16,7 @@ export const StyledButton = styled.button`
   border: none;
   background-color: ${colors.lightGrey};
   font-weight: bold;
-  font-size: 14px;
+  font-size: ${fonts.sizes.xs};
   color: ${colors.black};
   cursor: pointer;
   text-align: center;

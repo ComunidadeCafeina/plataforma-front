@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 
 export const StyledButton = styled.button`
   background-color: ${colors.lightRed};
@@ -11,7 +12,7 @@ export const StyledButton = styled.button`
   border-radius: 24px;
   height: 56px;
   color: ${colors.white};
-  font-size: 1rem;
+  font-size: ${fonts.sizes.s};
   font-weight: bold;
   margin: 5rem 0 5rem 0;
   cursor: pointer;

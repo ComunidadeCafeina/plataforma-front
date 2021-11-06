@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const Wrapper = styled.div`
     margin-left: 50px;
     text-decoration: none;
     color: ${colors.white};
-    font-size: 1.25rem;
+    font-size: ${fonts.sizes.m};
     font-weight: bold;
   }
 `;
