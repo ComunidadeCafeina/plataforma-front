@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colors from '../../styles/colors';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -6,7 +7,7 @@ export const Wrapper = styled.div`
   > * {
     margin-left: 50px;
     text-decoration: none;
-    color: #ffffff;
+    color: ${colors.white};
     font-size: 1.25rem;
     font-weight: bold;
   }
@@ -18,7 +19,7 @@ export const ContentContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  background-color: #000000;
+  background-color: ${colors.black};
   .mobile-logo {
     display: none;
   }

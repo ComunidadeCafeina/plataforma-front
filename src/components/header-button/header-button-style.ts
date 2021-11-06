@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import colors from '../../styles/colors';
 
 export const StyledButton = styled.button`
-  background-color: #fe393b;
+  background-color: ${colors.lightRed};
   width: inherit;
   display: flex;
   align-items: center;
@@ -9,7 +10,7 @@ export const StyledButton = styled.button`
   border: none;
   border-radius: 24px;
   height: 56px;
-  color: #ffffff;
+  color: ${colors.white};
   font-size: 1rem;
   font-weight: bold;
   margin: 5rem 0 5rem 0;
