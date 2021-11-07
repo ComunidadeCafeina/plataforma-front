@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
+import breakpoints from '../../styles/breakpoints';
 
 export const Container = styled.div`
   display: flex;
@@ -17,12 +18,12 @@ export const Container = styled.div`
   text-align: center;
   margin: auto;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: ${breakpoints.sm}) {
     margin: 0 0 32px 0;
     width: 100%;
   }
 
-  @media screen and (min-width: 720px) and (max-width: 992px) {
+  @media screen and (min-width: ${breakpoints.sm}) and (max-width: ${breakpoints.lg}) {
     height: 400px;
   }
 `;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../../../styles/colors';
 import fonts from '../../../../styles/fonts';
+import breakpoints from '../../../../styles/breakpoints';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -14,7 +15,8 @@ export const HeaderTitle = styled.h1`
   text-align: center;
   font-size: ${fonts.sizes.xl};
   color: ${colors.white};
-  @media (max-width: 720px) {
+
+  @media (max-width: ${breakpoints.sm}) {
     text-align: left;
     margin-left: 1rem;
   }
@@ -33,7 +35,8 @@ export const HeaderParagraph = styled.p`
   text-align: center;
   max-width: 70ch;
   line-height: 150%;
-  @media (max-width: 720px) {
+
+  @media (max-width: ${breakpoints.sm}) {
     text-align: left;
     margin-left: 1rem;
   }

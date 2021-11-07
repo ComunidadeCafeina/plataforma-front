@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../../styles/breakpoints';
 
 export const ContentContainer = styled.div`
   margin: 96px auto;
@@ -6,7 +7,7 @@ export const ContentContainer = styled.div`
   max-width: 1120px;
   box-sizing: content-box;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: ${breakpoints.sm}) {
     padding: 48px 16px;
     margin: 0;
   }

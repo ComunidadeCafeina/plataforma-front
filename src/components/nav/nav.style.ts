@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
+import breakpoints from '../../styles/breakpoints';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ export const ContentContainer = styled.div`
     display: none;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: ${breakpoints.sm}) {
     justify-content: flex-start;
     .desktop-logo {
       display: none;
