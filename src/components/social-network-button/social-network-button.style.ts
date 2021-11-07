@@ -15,7 +15,7 @@ export const StyledButton = styled.button`
   border-radius: 48px;
   border: none;
   background-color: ${colors.lightGrey};
-  font-weight: bold;
+  font-weight: ${fonts.weights.bold};
   font-size: ${fonts.sizes.xs};
   color: ${colors.black};
   cursor: pointer;

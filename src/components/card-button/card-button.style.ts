@@ -15,7 +15,7 @@ export const StyledButton = styled.button`
   box-sizing: border-box;
   border-radius: 24px;
   background-color: ${colors.white};
-  font-weight: 700;
+  font-weight: ${fonts.weights.bold};
   font-size: ${fonts.sizes.s};
   color: ${colors.lightRed};
   cursor: pointer;

@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     text-decoration: none;
     color: ${colors.white};
     font-size: ${fonts.sizes.m};
-    font-weight: bold;
+    font-weight: ${fonts.weights.bold};
   }
 `;
 

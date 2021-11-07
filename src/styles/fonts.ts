@@ -6,7 +6,10 @@ const fonts = {
     l: '32px',
     xl: '56px',
   },
-  weights: {},
+  weights: {
+    normal: 400,
+    bold: 700,
+  },
 };
 
 export default fonts;

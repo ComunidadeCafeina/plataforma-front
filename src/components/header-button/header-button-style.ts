@@ -13,7 +13,7 @@ export const StyledButton = styled.button`
   height: 56px;
   color: ${colors.white};
   font-size: ${fonts.sizes.s};
-  font-weight: bold;
+  font-weight: ${fonts.weights.bold};
   margin: 5rem 0 5rem 0;
   cursor: pointer;
 `;

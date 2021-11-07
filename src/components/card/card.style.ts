@@ -30,7 +30,7 @@ export const Container = styled.div`
 export const Title = styled.p`
   margin: auto;
   font-size: ${fonts.sizes.m};
-  font-weight: 700;
+  font-weight: ${fonts.weights.bold};
   line-height: 30px;
 `;
 
@@ -48,6 +48,6 @@ export const Description = styled.p`
   margin: 24px 0;
   height: 90px;
   font-size: ${fonts.sizes.s};
-  font-weight: 400;
+  font-weight: ${fonts.weights.normal};
   line-height: 24px;
 `;
