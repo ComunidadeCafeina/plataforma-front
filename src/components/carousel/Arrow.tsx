@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { LeftArrowIcon, RightArrowIcon } from '../../icons';
 import colors from '../../styles/colors';
+import shadows from '../../styles/shadows';
 
 export enum ArrowType {
   previous = 'previous',
@@ -27,7 +28,7 @@ const Arrow = styled.button`
   background: ${colors.white};
   border: 1px solid ${colors.lightGrey};
   box-sizing: border-box;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: ${shadows.default};
 `;
 
 const Component = ({ type, onClick }: ArrowProps): React.ReactElement => (

@@ -3,6 +3,7 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import breakpoints from '../../styles/breakpoints';
 import spaces from '../../styles/spaces';
+import shadows from '../../styles/shadows';
 
 export const Container = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ export const Container = styled.div`
   height: 370px;
   background: ${colors.white};
   border: 2px solid ${colors.lightGrey};
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: ${shadows.default};
   border-radius: 24px;
   width: 82%;
   text-align: center;
