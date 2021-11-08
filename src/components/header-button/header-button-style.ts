@@ -14,10 +14,10 @@ export const StyledButton = styled.button`
   color: ${colors.white};
   font-size: ${fonts.sizes.s};
   font-weight: ${fonts.weights.bold};
-  margin: 5rem 0 5rem 0;
+  margin: 80px 0 80px 0;
   cursor: pointer;
 `;
 
 export const ContentContainer = styled.div`
-  width: 15rem;
+  width: 240px;
 `;

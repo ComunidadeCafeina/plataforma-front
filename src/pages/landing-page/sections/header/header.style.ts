@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import colors from '../../../../styles/colors';
 import fonts from '../../../../styles/fonts';
 import breakpoints from '../../../../styles/breakpoints';
+import spaces from '../../../../styles/spaces';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -11,14 +12,14 @@ export const Wrapper = styled.div`
 `;
 
 export const HeaderTitle = styled.h1`
-  margin: 7rem 0 4rem 0;
+  margin: 112px 0 64px 0;
   text-align: center;
   font-size: ${fonts.sizes.xl};
   color: ${colors.white};
 
   @media (max-width: ${breakpoints.sm}) {
     text-align: left;
-    margin-left: 1rem;
+    margin-left: ${spaces.s};
   }
 `;
 
@@ -38,7 +39,7 @@ export const HeaderParagraph = styled.p`
 
   @media (max-width: ${breakpoints.sm}) {
     text-align: left;
-    margin-left: 1rem;
+    margin-left: ${spaces.s};
   }
 `;
 

@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import breakpoints from '../../styles/breakpoints';
+import spaces from '../../styles/spaces';
 
 export const Container = styled.div`
   display: flex;
   flex: none;
   flex-direction: column;
   align-items: center;
-  padding: 24px 16px;
+  padding: ${spaces.m} ${spaces.s};
   height: 370px;
   background: ${colors.white};
   border: 2px solid ${colors.lightGrey};
@@ -19,7 +20,7 @@ export const Container = styled.div`
   margin: auto;
 
   @media screen and (max-width: ${breakpoints.sm}) {
-    margin: 0 0 32px 0;
+    margin: 0 0 ${spaces.l} 0;
     width: 100%;
   }
 
@@ -46,9 +47,9 @@ export const Description = styled.p`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 24px 0;
+  margin: ${spaces.m} 0;
   height: 90px;
   font-size: ${fonts.sizes.s};
   font-weight: ${fonts.weights.normal};
-  line-height: 24px;
+  line-height: ${spaces.m};
 `;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import breakpoints from '../../styles/breakpoints';
+import spaces from '../../styles/spaces';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  margin-top: 2.5rem;
+  margin-top: 40px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -33,7 +34,7 @@ export const ContentContainer = styled.div`
     }
     .mobile-logo {
       display: block;
-      margin-left: 1rem;
+      margin-left: ${spaces.s};
     }
   }
 `;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
+import spaces from '../../styles/spaces';
 
 export const IndicatorWrapper = styled.div`
   display: flex;
@@ -14,8 +15,8 @@ export const Indicator = styled.button<{ highlighted: boolean }>`
   padding: 0;
   border: 0;
   outline: 0;
-  margin-left: 14px;
-  margin-right: 14px;
+  margin-left: ${spaces.xs};
+  margin-right: ${spaces.xs};
   background-color: ${props =>
     props.highlighted ? colors.lightRed : colors.grey};
   transition: transform 0.1s;

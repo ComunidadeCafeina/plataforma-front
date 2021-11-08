@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
+import spaces from '../../styles/spaces';
 
 export const StyledButton = styled.button`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  padding: 16px;
+  padding: ${spaces.s};
   position: static;
   width: 100%;
   height: 62px;
@@ -24,5 +25,5 @@ export const StyledButton = styled.button`
 `;
 
 export const Text = styled.span`
-  margin-left: 16px;
+  margin-left: ${spaces.s};
 `;
