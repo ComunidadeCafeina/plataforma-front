@@ -1,6 +1,5 @@
 import React from 'react';
-import { HeaderButton } from '../../../../components/header-button';
-import { Nav } from '../../../../components/nav';
+import { HeaderButton, Nav } from '../../../../components';
 import {
   HeaderWrapper,
   HeaderParagraph,

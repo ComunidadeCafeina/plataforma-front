@@ -1,3 +1,5 @@
+import colors from '../styles/colors';
+
 export const RightArrowIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
@@ -10,7 +12,7 @@ export const RightArrowIcon = (
   >
     <path
       d="M1 9.25h15M8.5 1.75l7.5 7.5-7.5 7.5"
-      stroke="#FE393B"
+      stroke={colors.lightRed}
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"

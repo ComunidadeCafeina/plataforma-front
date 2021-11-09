@@ -1,40 +1,45 @@
 import styled from 'styled-components';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
+import breakpoints from '../../styles/breakpoints';
+import spaces from '../../styles/spaces';
+import shadows from '../../styles/shadows';
 
 export const Container = styled.div`
   display: flex;
   flex: none;
   flex-direction: column;
   align-items: center;
-  padding: 24px 16px;
+  padding: ${spaces.m} ${spaces.s};
   height: 370px;
-  background: #ffffff;
-  border: 2px solid #e8e8e8;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+  background: ${colors.white};
+  border: 2px solid ${colors.lightGrey};
+  box-shadow: ${shadows.default};
   border-radius: 24px;
   width: 82%;
   text-align: center;
   margin: auto;
 
-  @media screen and (max-width: 720px) {
-    margin: 0 0 32px 0;
+  @media screen and (max-width: ${breakpoints.sm}) {
+    margin: 0 0 ${spaces.l} 0;
     width: 100%;
   }
 
-  @media screen and (min-width: 720px) and (max-width: 992px) {
+  @media screen and (min-width: ${breakpoints.sm}) and (max-width: ${breakpoints.lg}) {
     height: 400px;
   }
 `;
 
 export const Title = styled.p`
   margin: auto;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: ${fonts.sizes.m};
+  font-weight: ${fonts.weights.bold};
   line-height: 30px;
 `;
 
 export const Divisor = styled.div`
-  border: 1px solid #fe393b;
-  background-color: #fe393b;
+  border: 1px solid ${colors.lightRed};
+  background-color: ${colors.lightRed};
   width: 79px;
 `;
 
@@ -43,9 +48,9 @@ export const Description = styled.p`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 24px 0;
+  margin: ${spaces.m} 0;
   height: 90px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
+  font-size: ${fonts.sizes.s};
+  font-weight: ${fonts.weights.normal};
+  line-height: ${spaces.m};
 `;
