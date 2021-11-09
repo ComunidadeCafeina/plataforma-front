@@ -1,6 +1,6 @@
 import { Header } from './sections/header/header';
-import ProjectsSection from './sections/projects';
-import SocialNetworksSection from './sections/social-networks';
+import ProjectsSection from './sections/projects/projects';
+import SocialNetworksSection from './sections/social-networks/social-networks';
 
 const LandingPage = (): React.ReactElement => (
   <>
