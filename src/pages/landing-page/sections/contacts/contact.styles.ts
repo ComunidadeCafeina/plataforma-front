@@ -14,6 +14,7 @@ export const Content = styled(ContentContainer)`
   background-color: ${colors.lightGrey};
   padding-top: ${spaces.xxl};
   padding-bottom: ${spaces.xxl};
+  margin-bottom: 0;
 
   @media screen and (max-width: ${breakpoints.sm}) {
     display: grid;

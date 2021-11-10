@@ -1,11 +1,11 @@
 import React from 'react';
-import { CompiladorasCup } from '../../icons/compiladoras-cup';
+import { CompiladorasIcon } from '../../icons';
 import { FooterTitle, FooterWrapper } from './footer.style';
 
 export const Footer = (): React.ReactElement => {
   return (
     <FooterWrapper>
-      <CompiladorasCup />
+      <CompiladorasIcon />
       <FooterTitle>Compiladoras de Cafeína @2021</FooterTitle>
     </FooterWrapper>
   );

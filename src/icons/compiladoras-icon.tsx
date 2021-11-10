@@ -1,7 +1,7 @@
 import React from 'react';
 import colors from '../styles/colors';
 
-export const CompiladorasCup = (
+export const CompiladorasIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => {
   return (

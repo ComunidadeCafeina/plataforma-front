@@ -18,4 +18,5 @@ export { LiteraryCaffeineIcon } from './literary-caffeine';
 export { RestrictProjectIcon } from './restrict-project-icon';
 export { CompiladorasMobileLogo } from './compiladoras-mobile-logo';
 export { CompiladorasDesktopLogo } from './compiladoras-desktop-logo';
+export { CompiladorasIcon } from './compiladoras-icon';
 export * from './heart';
