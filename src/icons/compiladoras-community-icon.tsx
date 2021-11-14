@@ -4,6 +4,7 @@ export const CompiladorasCommunityIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="compiladoras-community-icon"
     width={44}
     height={51}
     fill="none"

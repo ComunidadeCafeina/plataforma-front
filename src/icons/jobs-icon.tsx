@@ -2,6 +2,7 @@ import colors from '../styles/colors';
 
 export const JobsIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
   <svg
+    data-testid="jobs-icon"
     width={46}
     height={46}
     fill="none"

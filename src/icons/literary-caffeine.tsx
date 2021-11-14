@@ -4,6 +4,7 @@ export const LiteraryCaffeineIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="literary-caffeine-icon"
     width={45}
     height={46}
     fill="none"

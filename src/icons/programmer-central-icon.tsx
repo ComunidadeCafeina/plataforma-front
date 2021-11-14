@@ -4,6 +4,7 @@ export const ProgrammerCentralIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="programmer-central-icon"
     width={67}
     height={35}
     fill="none"

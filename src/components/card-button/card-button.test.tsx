@@ -26,7 +26,7 @@ describe('CardButton', () => {
         onClick={() => {}}
       />,
     );
-    const restrictIcon = await screen.findByTestId('right-arrow-icon');
-    expect(restrictIcon).toBeInTheDocument();
+    const nonRestrictIcon = await screen.findByTestId('right-arrow-icon');
+    expect(nonRestrictIcon).toBeInTheDocument();
   });
 });
