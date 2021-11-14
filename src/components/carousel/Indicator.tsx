@@ -27,6 +27,8 @@ const Component = ({
       {[...Array(getNumberOfIndicators(items, slidesToShow))].map((_, i) => (
         <Indicator
           key={`carousel-indicator-${i}`}
+          role="button"
+          aria-label={`carousel-indicator-${i}`}
           data-testid={`carousel-indicator-${i}`}
           highlighted={i === active % items}
           onClick={() => onClick(i)}

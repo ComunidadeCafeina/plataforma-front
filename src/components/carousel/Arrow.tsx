@@ -34,11 +34,11 @@ const Arrow = styled.button`
 const Component = ({ type, onClick }: ArrowProps): React.ReactElement => (
   <Container>
     {type === ArrowType.previous ? (
-      <Arrow onClick={onClick}>
+      <Arrow onClick={onClick} role="button" aria-label="Carousel arrow left">
         <LeftArrowIcon />
       </Arrow>
     ) : (
-      <Arrow onClick={onClick}>
+      <Arrow onClick={onClick} role="button" aria-label="Carousel arrow right">
         <RightArrowIcon />
       </Arrow>
     )}

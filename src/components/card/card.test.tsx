@@ -27,12 +27,12 @@ describe('Card', () => {
   window.open = jest.fn();
 
   it('should have no accessibility issues', async () => {
-    const { container } = render(<Card id="123" {...mockedProject} />);
+    const { container } = render(<Card {...mockedProject} />);
     expect(await axe(container)).toHaveNoViolations();
   });
 
   it.each(projects)('should render projects correctly', async project => {
-    render(<Card id="123" {...project} />);
+    render(<Card {...project} />);
 
     expect(await screen.findByText(project.title)).toBeInTheDocument();
     expect(await screen.findByText(project.description)).toBeInTheDocument();

@@ -52,8 +52,8 @@ const ProjectsSection = (): React.ReactElement => (
 
     <CardsContainer>
       <ProjectsList>
-        {projects.map((project, index) => (
-          <Card key={project.brandIcon} {...project} id={`card-${index}`} />
+        {projects.map(project => (
+          <Card key={project.brandIcon} {...project} />
         ))}
       </ProjectsList>
     </CardsContainer>
