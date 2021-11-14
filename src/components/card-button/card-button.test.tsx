@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { CardButton } from './card-button';
 
 describe('CardButton', () => {
+  window.open = jest.fn();
+
   it('should have no accessibility issues', async () => {
     const { container } = render(
       <CardButton text="Compiladoras de Cafeína" restrict onClick={() => {}} />,
@@ -28,5 +30,18 @@ describe('CardButton', () => {
     );
     const nonRestrictIcon = await screen.findByTestId('right-arrow-icon');
     expect(nonRestrictIcon).toBeInTheDocument();
+  });
+
+  it('should render onClick function correctly', async () => {
+    render(
+      <CardButton
+        text="Compiladoras de Cafeína"
+        restrict={false}
+        onClick={() => window.open('http://compiladoras.com.br/')}
+      />,
+    );
+    const button = await screen.findByText('Compiladoras de Cafeína');
+    fireEvent.click(button);
+    expect(window.open).toHaveBeenCalledWith('http://compiladoras.com.br/');
   });
 });
