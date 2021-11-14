@@ -50,7 +50,7 @@ const ProjectsSection = (): React.ReactElement => (
       Alguns projetos são exclusivos para pessoas que fazem parte da comunidade
     </Description>
 
-    <CardsContainer>
+    <CardsContainer data-testid="projects-list">
       <ProjectsList>
         {projects.map(project => (
           <Card key={project.brandIcon} {...project} />
