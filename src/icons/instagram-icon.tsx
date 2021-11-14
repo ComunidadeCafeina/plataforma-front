@@ -4,6 +4,7 @@ export const InstagramIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="instagram-icon"
     width={30}
     height={31}
     fill="none"

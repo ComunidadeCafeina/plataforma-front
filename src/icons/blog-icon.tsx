@@ -2,6 +2,7 @@ import colors from '../styles/colors';
 
 export const BlogIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
   <svg
+    data-testid="blog-icon"
     width={31}
     height={31}
     fill="none"
