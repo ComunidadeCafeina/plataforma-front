@@ -4,6 +4,7 @@ export const RightArrowIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="right-arrow-icon"
     width={17}
     height={18}
     fill="none"
