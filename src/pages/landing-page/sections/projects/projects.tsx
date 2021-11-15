@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import Carousel from '../../../../components/carousel';
 import {
   ContentContainer,
@@ -7,8 +7,9 @@ import {
   Description,
 } from '../../../../components';
 import { IconBox, CardsContainer } from './projects.style';
-import projects from './projects-mock';
 import { LockIcon } from '../../../../icons';
+import { Project } from '../../../../models/project';
+import mockProjects from '../../../../mocks/constants/projects';
 
 interface ProjectsListProps {
   children: React.ReactNode;
@@ -39,25 +40,36 @@ const ProjectsList = ({ children }: ProjectsListProps) => {
   );
 };
 
-const ProjectsSection = (): React.ReactElement => (
-  <ContentContainer id="projetos">
-    <Title>Conheça nossos projetos</Title>
+const ProjectsSection = (): React.ReactElement => {
+  const [projects, setProjects] = useState<Project[]>(mockProjects);
 
-    <Description>
-      <IconBox>
-        <LockIcon />
-      </IconBox>
-      Alguns projetos são exclusivos para pessoas que fazem parte da comunidade
-    </Description>
+  useEffect(() => {
+    fetch('/projects')
+      .then(res => res.json())
+      .then(data => setProjects(data));
+  }, []);
 
-    <CardsContainer data-testid="projects-list">
-      <ProjectsList>
-        {projects.map(project => (
-          <Card key={project.brandIcon} {...project} />
-        ))}
-      </ProjectsList>
-    </CardsContainer>
-  </ContentContainer>
-);
+  return (
+    <ContentContainer id="projetos">
+      <Title>Conheça nossos projetos</Title>
+
+      <Description>
+        <IconBox>
+          <LockIcon />
+        </IconBox>
+        Alguns projetos são exclusivos para pessoas que fazem parte da
+        comunidade
+      </Description>
+
+      <CardsContainer data-testid="projects-list">
+        <ProjectsList>
+          {projects.map(project => (
+            <Card key={project.brandIcon} {...project} />
+          ))}
+        </ProjectsList>
+      </CardsContainer>
+    </ContentContainer>
+  );
+};
 
 export default ProjectsSection;
