@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { Card } from './card';
-import projects from '../../pages/landing-page/sections/projects/projects-mock';
+import projectsMock from '../../mocks/constants/projects';
 
 type brandIconIDsType = {
   [key: string]: string;
@@ -31,7 +31,7 @@ describe('Card', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
-  it.each(projects)('should render projects correctly', async project => {
+  it.each(projectsMock)('should render projects correctly', async project => {
     render(<Card {...project} />);
 
     expect(await screen.findByText(project.title)).toBeInTheDocument();

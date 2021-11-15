@@ -1,4 +1,4 @@
-const socialNetworks = [
+const mockSocialNetworks = [
   {
     text: 'Instagram',
     icon: 'instagram',
@@ -41,4 +41,4 @@ const socialNetworks = [
   },
 ];
 
-export default socialNetworks;
+export default mockSocialNetworks;

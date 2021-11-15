@@ -1,4 +1,4 @@
-const projects = [
+const mockProjects = [
   {
     brandIcon: 'community',
     title: 'Comunidade Compiladoras',
@@ -40,4 +40,4 @@ const projects = [
   },
 ];
 
-export default projects;
+export default mockProjects;

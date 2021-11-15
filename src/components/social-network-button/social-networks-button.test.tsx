@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { SocialNetworkButton } from './social-network-button';
-import socialNetworks from '../../pages/landing-page/sections/social-networks/social-networks-mock';
+import mockSocialNetworks from '../../mocks/constants/social-networks';
 
 type socialNetworksType = {
   [key: string]: string;
@@ -34,7 +34,7 @@ describe('SocialNetworksButton', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
-  it.each(socialNetworks)(
+  it.each(mockSocialNetworks)(
     'should render social networks correctly',
     async socialNetwork => {
       render(<SocialNetworkButton {...socialNetwork} />);
