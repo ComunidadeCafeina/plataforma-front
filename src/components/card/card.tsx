@@ -58,7 +58,7 @@ export const Card = ({
         text="Entrar"
         restrict={restrict}
         onClick={handleClick}
-        // arial-label={`Botão ${title}`}
+        arial-label={`Botão ${title}`}
       />
     </Container>
   );
