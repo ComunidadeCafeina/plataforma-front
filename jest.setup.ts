@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+import 'whatwg-fetch';
 import { toHaveNoViolations } from 'jest-axe';
 import { server } from './src/mocks/server';
 
