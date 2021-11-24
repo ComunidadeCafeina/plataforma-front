@@ -7,3 +7,4 @@ export * from './description';
 export * from './social-network-button';
 export * from './header-button';
 export * from './nav';
+export * from './full-content-container';
