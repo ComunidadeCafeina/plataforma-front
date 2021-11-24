@@ -40,7 +40,7 @@ const Component = ({
   });
 
   return (
-    <CarouselWrapper>
+    <CarouselWrapper data-testid="carousel-wrapper">
       <SliderWrapper>
         <Arrow
           type={ArrowType.previous}

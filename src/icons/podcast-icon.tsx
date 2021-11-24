@@ -4,6 +4,7 @@ export const PodcastIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="podcast-icon"
     width={31}
     height={31}
     fill="none"

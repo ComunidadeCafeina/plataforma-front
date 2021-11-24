@@ -4,6 +4,7 @@ export const LinkedInIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="linkedin-icon"
     width={30}
     height={31}
     fill="none"

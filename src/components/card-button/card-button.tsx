@@ -13,7 +13,12 @@ export const CardButton = ({
   restrict,
   onClick,
 }: CardButtonProps): React.ReactElement => (
-  <StyledButton type="button" onClick={onClick}>
+  <StyledButton
+    type="button"
+    onClick={onClick}
+    role="button"
+    arial-label={`Botão ${text}`}
+  >
     {text} {restrict ? <RestrictProjectIcon /> : <RightArrowIcon />}
   </StyledButton>
 );

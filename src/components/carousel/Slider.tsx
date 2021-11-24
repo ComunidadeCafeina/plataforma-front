@@ -126,7 +126,7 @@ const Component = ({
   ]);
 
   return (
-    <Slider ref={sliderRef}>
+    <Slider ref={sliderRef} data-testid={`slider-size-${slidesToShow}`}>
       <Swipeable xMovementTrigger={styles.slideWidth / 2} onSwipe={onSwipe}>
         <Track
           width={styles.trackWidth}

@@ -4,6 +4,7 @@ export const YouTubeIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="youtube-icon"
     width={31}
     height={31}
     fill="none"

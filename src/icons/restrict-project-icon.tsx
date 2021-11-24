@@ -4,6 +4,7 @@ export const RestrictProjectIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="restrict-project-icon"
     width={16}
     height={21}
     fill="none"

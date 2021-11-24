@@ -21,7 +21,6 @@ const brandIconOptions: brandIconOptionType = {
 };
 
 interface CardProps {
-  id: string;
   brandIcon: keyof typeof brandIconOptions;
   title: string;
   description: string;
@@ -30,7 +29,6 @@ interface CardProps {
 }
 
 export const Card = ({
-  id,
   brandIcon,
   title,
   description,
@@ -47,7 +45,7 @@ export const Card = ({
   };
 
   return (
-    <Container id={id}>
+    <Container>
       <BrandIcon />
 
       <Title>{title}</Title>
@@ -56,7 +54,12 @@ export const Card = ({
 
       <Description>{description}</Description>
 
-      <CardButton text="Entrar" restrict={restrict} onClick={handleClick} />
+      <CardButton
+        text="Entrar"
+        restrict={restrict}
+        onClick={handleClick}
+        arial-label={`Botão ${title}`}
+      />
     </Container>
   );
 };

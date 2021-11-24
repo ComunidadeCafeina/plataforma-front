@@ -4,6 +4,7 @@ export const GithubIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="github-icon"
     width={31}
     height={31}
     fill="none"

@@ -4,6 +4,7 @@ export const TwitterIcon = (
   props: React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
+    data-testid="twitter-icon"
     width={30}
     height={31}
     fill="none"
