@@ -8,7 +8,7 @@ import {
   CarouselContentWrapper,
   CarouselContent,
 } from './carousel.style';
-import Indicator from './indicator';
+import Indicator from './components/indicator/indicator';
 
 interface CarouselProps {
   children: React.ReactNode[];
@@ -113,7 +113,7 @@ export const Carousel = ({
 
   return (
     <CarouselContainer>
-      <CarouselWrapper>
+      <CarouselWrapper data-testid="carousel-wrapper">
         {(isRepeating || currentIndex > 0) && (
           <Container>
             <Arrow
@@ -130,6 +130,7 @@ export const Carousel = ({
           onTouchMove={handleTouchMove}
         >
           <CarouselContent
+            data-testid={`carousel-content-size-${show}`}
             className={`show-${show}`}
             style={{
               transform: `translateX(-${currentIndex * (100 / show)}%)`,

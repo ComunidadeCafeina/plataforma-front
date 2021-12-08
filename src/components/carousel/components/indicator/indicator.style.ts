@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import colors from '../../styles/colors';
-import spaces from '../../styles/spaces';
+import colors from '../../../../styles/colors';
+import spaces from '../../../../styles/spaces';
 
 export const IndicatorWrapper = styled.div`
   display: flex;
