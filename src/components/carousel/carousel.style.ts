@@ -26,6 +26,7 @@ export const CarouselContainer = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const CarouselWrapper = styled.div`

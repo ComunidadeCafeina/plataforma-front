@@ -8,6 +8,7 @@ import {
   CarouselContentWrapper,
   CarouselContent,
 } from './carousel.style';
+import Indicator from './indicator';
 
 interface CarouselProps {
   children: React.ReactNode[];
@@ -153,6 +154,13 @@ export const Carousel = ({
           </Container>
         )}
       </CarouselWrapper>
+
+      <Indicator
+        items={children.length}
+        slidesToShow={show}
+        active={infiniteLoop ? currentIndex - show : currentIndex}
+        onClick={index => setCurrentIndex(infiniteLoop ? show + index : index)}
+      />
     </CarouselContainer>
   );
 };
