@@ -5,8 +5,8 @@ import {
   EventsCard,
   Description,
   Carousel,
-  FullContentContainer,
 } from '../../../../components';
+import { FullContentContainer } from './events.style';
 import { Event } from '../../../../models/event';
 import mockEvents from '../../../../mocks/constants/events';
 
@@ -21,7 +21,7 @@ const EventsSection = (): React.ReactElement => {
   }, []);
 
   return (
-    <FullContentContainer style={{ padding: '96px 0 44px' }}>
+    <FullContentContainer>
       <ContentContainer style={{ margin: '0 auto' }}>
         <Title>Próximos eventos</Title>
 
