@@ -20,6 +20,22 @@ const EventsSection = (): React.ReactElement => {
       .then(data => setEvents(data));
   }, []);
 
+  const EventsList = () => (
+    <>
+      {sizeScreen < 720 ? (
+        events.map(event => <EventsCard {...event} />)
+      ) : (
+        <Carousel show={sizeScreen >= 992 ? 2 : 1} infiniteLoop>
+          {events.map(event => (
+            <div>
+              <EventsCard {...event} />
+            </div>
+          ))}
+        </Carousel>
+      )}
+    </>
+  );
+
   return (
     <FullContentContainer>
       <ContentContainer style={{ margin: '0 auto' }}>
@@ -30,16 +46,10 @@ const EventsSection = (): React.ReactElement => {
           carreira
         </Description>
 
-        {sizeScreen < 720 ? (
-          events.map(event => <EventsCard {...event} />)
+        {events.length === 0 ? (
+          <EventsList />
         ) : (
-          <Carousel show={sizeScreen >= 992 ? 2 : 1} infiniteLoop>
-            {events.map(event => (
-              <div>
-                <EventsCard {...event} />
-              </div>
-            ))}
-          </Carousel>
+          <p className="error-message">Sem eventos no momento.</p>
         )}
       </ContentContainer>
     </FullContentContainer>
