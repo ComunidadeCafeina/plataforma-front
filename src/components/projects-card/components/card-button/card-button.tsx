@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledButton } from './card-button.style';
-import { RestrictProjectIcon, RightArrowIcon } from '../../icons';
+import { RestrictProjectIcon, RightArrowIcon } from '../../../../icons';
 
 interface CardButtonProps {
   text: string;
