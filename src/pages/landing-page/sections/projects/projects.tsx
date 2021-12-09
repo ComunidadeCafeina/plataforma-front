@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import {
   ContentContainer,
   Title,
-  Card,
+  ProjectsCard,
   Description,
   Carousel,
 } from '../../../../components';
@@ -34,12 +34,14 @@ const ProjectsSection = (): React.ReactElement => {
       </Description>
 
       {sizeScreen < 720 ? (
-        projects.map(project => <Card key={project.brandIcon} {...project} />)
+        projects.map(project => (
+          <ProjectsCard key={project.brandIcon} {...project} />
+        ))
       ) : (
         <Carousel show={sizeScreen >= 992 ? 2 : 1} infiniteLoop>
           {projects.map(project => (
             <div>
-              <Card key={project.brandIcon} {...project} />
+              <ProjectsCard key={project.brandIcon} {...project} />
             </div>
           ))}
         </Carousel>
