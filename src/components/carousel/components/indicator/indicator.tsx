@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import { IndicatorWrapper, Indicator } from './indicator.style';
+import { IndicatorWrapper, IndicatorBullet } from './indicator.style';
 
 interface IndicatorProps {
   items: number;
@@ -16,7 +16,7 @@ const getNumberOfIndicators = (items: number, slidesToShow: number) => {
   return 1;
 };
 
-const Component = ({
+const Indicator = ({
   items,
   slidesToShow,
   active,
@@ -25,7 +25,7 @@ const Component = ({
   return (
     <IndicatorWrapper>
       {[...Array(getNumberOfIndicators(items, slidesToShow))].map((_, i) => (
-        <Indicator
+        <IndicatorBullet
           key={`carousel-indicator-${i}`}
           role="button"
           aria-label={`carousel-indicator-${i}`}
@@ -38,4 +38,4 @@ const Component = ({
   );
 };
 
-export default Component;
+export default Indicator;

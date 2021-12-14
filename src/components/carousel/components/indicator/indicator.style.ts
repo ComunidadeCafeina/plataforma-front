@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import colors from '../../styles/colors';
-import spaces from '../../styles/spaces';
+import colors from '../../../../styles/colors';
+import spaces from '../../../../styles/spaces';
 
 export const IndicatorWrapper = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const IndicatorWrapper = styled.div`
   padding: 52px 12px;
 `;
 
-export const Indicator = styled.button<{ highlighted: boolean }>`
+export const IndicatorBullet = styled.button<{ highlighted: boolean }>`
   width: 25px;
   height: 25px;
   border-radius: 50%;

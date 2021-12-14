@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
-import { Card } from './card';
+import { ProjectsCard } from './projects-card';
 import projectsMock from '../../mocks/constants/projects';
 
 type brandIconIDsType = {
@@ -23,16 +23,16 @@ const mockedProject = {
   link: 'https://docs.google.com/forms/d/e/1FAIpQLSeh8rIqDCip_i3B29Zbjmw-8dM80d8ins1qrjjuq5JjlcYW-Q/viewform',
 };
 
-describe('Card', () => {
+describe('ProjectsCard', () => {
   window.open = jest.fn();
 
   it('should have no accessibility issues', async () => {
-    const { container } = render(<Card {...mockedProject} />);
+    const { container } = render(<ProjectsCard {...mockedProject} />);
     expect(await axe(container)).toHaveNoViolations();
   });
 
   it.each(projectsMock)('should render projects correctly', async project => {
-    render(<Card {...project} />);
+    render(<ProjectsCard {...project} />);
 
     expect(await screen.findByText(project.title)).toBeInTheDocument();
     expect(await screen.findByText(project.description)).toBeInTheDocument();

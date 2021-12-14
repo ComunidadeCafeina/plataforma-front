@@ -1,5 +1,5 @@
-import { Container, Title, Divisor, Description } from './card.style';
-import { CardButton } from '..';
+import { Container, Title, Divisor, Description } from './projects-card.style';
+import { CardButton } from './components/card-button';
 import {
   ProgrammerCentralIcon,
   JobsIcon,
@@ -20,7 +20,7 @@ const brandIconOptions: brandIconOptionType = {
   programmer: ProgrammerCentralIcon,
 };
 
-interface CardProps {
+interface ProjectsCardProps {
   brandIcon: keyof typeof brandIconOptions;
   title: string;
   description: string;
@@ -28,13 +28,13 @@ interface CardProps {
   link: string;
 }
 
-export const Card = ({
+export const ProjectsCard = ({
   brandIcon,
   title,
   description,
   restrict,
   link,
-}: CardProps): React.ReactElement => {
+}: ProjectsCardProps): React.ReactElement => {
   const handleClick = () => {
     window.open(link);
   };

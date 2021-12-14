@@ -4,20 +4,17 @@ import fonts from '../../styles/fonts';
 import spaces from '../../styles/spaces';
 
 export const StyledButton = styled.button`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
   padding: ${spaces.s};
-  position: static;
-  width: 116.45px;
+  width: 236px;
   height: 56px;
-  border: 2px solid ${colors.lightRed};
   box-sizing: border-box;
   border-radius: 24px;
-  background-color: ${colors.white};
+  border: none;
+  background-color: ${colors.lightGrey};
   font-weight: ${fonts.weights.bold};
   font-size: ${fonts.sizes.s};
-  color: ${colors.lightRed};
+  color: ${colors.black};
   cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
 `;

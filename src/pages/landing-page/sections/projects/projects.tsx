@@ -1,47 +1,19 @@
 import { useEffect, useState } from 'react';
-import Carousel from '../../../../components/carousel';
 import {
   ContentContainer,
   Title,
-  Card,
+  ProjectsCard,
   Description,
+  Carousel,
 } from '../../../../components';
-import { IconBox, CardsContainer } from './projects.style';
+import { IconBox } from './projects.style';
 import { LockIcon } from '../../../../icons';
 import { Project } from '../../../../models/project';
 import mockProjects from '../../../../mocks/constants/projects';
 
-interface ProjectsListProps {
-  children: React.ReactNode;
-}
-
-const ProjectsList = ({ children }: ProjectsListProps) => {
-  const sizeScreen = window.innerWidth;
-
-  const carouselBreakpoints = [
-    {
-      size: 719,
-      settings: {
-        slidesToShow: 1,
-      },
-    },
-    {
-      size: 991,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-  ];
-
-  return sizeScreen < 720 ? (
-    <>{children}</>
-  ) : (
-    <Carousel breakpoints={carouselBreakpoints}>{children}</Carousel>
-  );
-};
-
 const ProjectsSection = (): React.ReactElement => {
   const [projects, setProjects] = useState<Project[]>(mockProjects);
+  const sizeScreen = window.innerWidth;
 
   useEffect(() => {
     fetch('/projects')
@@ -61,13 +33,19 @@ const ProjectsSection = (): React.ReactElement => {
         comunidade
       </Description>
 
-      <CardsContainer data-testid="projects-list">
-        <ProjectsList>
+      {sizeScreen < 720 ? (
+        projects.map(project => (
+          <ProjectsCard key={project.brandIcon} {...project} />
+        ))
+      ) : (
+        <Carousel show={sizeScreen >= 992 ? 2 : 1} infiniteLoop>
           {projects.map(project => (
-            <Card key={project.brandIcon} {...project} />
+            <div>
+              <ProjectsCard key={project.brandIcon} {...project} />
+            </div>
           ))}
-        </ProjectsList>
-      </CardsContainer>
+        </Carousel>
+      )}
     </ContentContainer>
   );
 };

@@ -17,8 +17,6 @@ describe('ProjectsSection', () => {
       await screen.findByText('Conheça nossos projetos'),
     ).toBeInTheDocument();
 
-    expect(screen.queryByTestId('projects-list')).toBeInTheDocument();
-
     expect(screen.queryByTestId('carousel-wrapper')).not.toBeInTheDocument();
   });
 
@@ -31,10 +29,11 @@ describe('ProjectsSection', () => {
       await screen.findByText('Conheça nossos projetos'),
     ).toBeInTheDocument();
 
-    expect(screen.queryByTestId('projects-list')).toBeInTheDocument();
     expect(screen.queryByTestId('carousel-wrapper')).toBeInTheDocument();
-    expect(screen.queryByTestId('slider-size-1')).toBeInTheDocument();
-    expect(screen.queryByTestId('slider-size-2')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('carousel-content-size-1')).toBeInTheDocument();
+    expect(
+      screen.queryByTestId('carousel-content-size-2'),
+    ).not.toBeInTheDocument();
   });
 
   it('should render carousel on desktop screen with 2 cards', async () => {
@@ -46,9 +45,10 @@ describe('ProjectsSection', () => {
       await screen.findByText('Conheça nossos projetos'),
     ).toBeInTheDocument();
 
-    expect(screen.queryByTestId('projects-list')).toBeInTheDocument();
     expect(screen.queryByTestId('carousel-wrapper')).toBeInTheDocument();
-    expect(screen.queryByTestId('slider-size-1')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('slider-size-2')).toBeInTheDocument();
+    expect(
+      screen.queryByTestId('carousel-content-size-1'),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByTestId('carousel-content-size-2')).toBeInTheDocument();
   });
 });
