@@ -116,11 +116,7 @@ export const Carousel = ({
       <CarouselWrapper data-testid="carousel-wrapper">
         {(isRepeating || currentIndex > 0) && (
           <Container>
-            <Arrow
-              onClick={prev}
-              role="button"
-              aria-label="Carousel arrow left"
-            >
+            <Arrow onClick={prev} role="button" aria-label="Projeto anterior">
               <LeftArrowIcon />
             </Arrow>
           </Container>
@@ -145,11 +141,7 @@ export const Carousel = ({
         </CarouselContentWrapper>
         {(isRepeating || currentIndex < length - show) && (
           <Container>
-            <Arrow
-              onClick={next}
-              role="button"
-              aria-label="Carousel arrow right"
-            >
+            <Arrow onClick={next} role="button" aria-label="Próximo projeto">
               <RightArrowIcon />
             </Arrow>
           </Container>
