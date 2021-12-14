@@ -52,7 +52,7 @@ export const EventsCard = ({
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <EventsButton
               link={link}
-              ariaLabel={`Botão para se inscrever no evento ${title}`}
+              ariaLabel={`Inscreva-se no evento ${title}`}
             />
           </div>
         </div>
