@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   ContentContainer,
   Title,
@@ -14,6 +14,20 @@ const EventsSection = (): React.ReactElement => {
   const [events, setEvents] = useState<Event[]>(mockEvents);
   const sizeScreen = window.innerWidth;
 
+  const calculateWindowSize = (size: number): number => {
+    if (size <= 720) {
+      return 0;
+    }
+
+    if (size <= 992) {
+      return 1;
+    }
+
+    return 2;
+  };
+
+  useMemo(() => calculateWindowSize(sizeScreen), [sizeScreen]);
+
   useEffect(() => {
     fetch('/events')
       .then(res => res.json())
@@ -22,10 +36,10 @@ const EventsSection = (): React.ReactElement => {
 
   const EventsList = () => (
     <>
-      {sizeScreen < 720 ? (
+      {calculateWindowSize(sizeScreen) ? (
         events.map(event => <EventsCard {...event} />)
       ) : (
-        <Carousel show={sizeScreen >= 992 ? 2 : 1} infiniteLoop>
+        <Carousel show={calculateWindowSize(sizeScreen)} infiniteLoop>
           {events.map(event => (
             <div>
               <EventsCard {...event} />
@@ -37,7 +51,7 @@ const EventsSection = (): React.ReactElement => {
   );
 
   return (
-    <FullContentContainer>
+    <FullContentContainer id="eventos">
       <ContentContainer style={{ margin: '0 auto' }}>
         <Title>Próximos eventos</Title>
 
