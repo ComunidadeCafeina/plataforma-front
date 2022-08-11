@@ -1,10 +1,10 @@
 <p align="center">
-<img src="./assets/compiladoras-preto-vermelho.png" style="width: 40%;" alt="Logo Compiladoras de Cafeína">
+	<img src="./assets/compiladoras-preto-vermelho.png" style="width: 40%;" alt="Logo Cafeína">
 </p>
 
-# Plataforma - Compiladoras de Cafeína
+# Plataforma - Comunidade Cafeína
 
-Olá! Seja muito bem-vinda ao repositório da Plataforma das Compiladoras de Cafeína! Estamos muito felizes com o seu interesse em contribuir com a nossa comunidade!
+Olá! Boas-vindas ao repositório da Plataforma da Comunidade Cafeína! Estamos muito felizes com o seu interesse em contribuir com a nossa comunidade.
 
 ## Como posso executar esse projeto?
 
@@ -12,7 +12,7 @@ Olá! Seja muito bem-vinda ao repositório da Plataforma das Compiladoras de Caf
 
 - [NodeJS](https://nodejs.org/en/download/)
 - [Yarn](https://yarnpkg.com/getting-started/install)
-- Editor de texto da sua preferência
+- Editor de código da sua preferência (como o [VSCode](https://code.visualstudio.com/))
 
 ### Passo a passo de instalação
 
@@ -54,7 +54,7 @@ yarn test
 
 ## Pull Request Template
 
-Nós priorizamos a padronização e organização dos nossos projetos, por isso trabalhamos com _pull request templates_ para facilitar a comunicação entre nós e a revisão do código por nossas companheiras de time. Quando você abrir um _pull request_ lembre-se de preencher o nosso template com bastante carinho. Nós agradecemos muito! ❤️
+Nós priorizamos a padronização e organização dos nossos projetos, por isso trabalhamos com _pull request templates_ para facilitar a comunicação entre nós e a revisão do código por quem mantêm esse repositório. Quando você abrir um _pull request_ lembre-se de preencher o nosso template com bastante carinho. Nós agradecemos muito! ❤️
 
 ## Quais tecnologias nós usamos?
 

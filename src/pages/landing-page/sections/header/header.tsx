@@ -1,6 +1,5 @@
 import React from 'react';
-import { HeaderButton } from '../../../../components/header-button';
-import { Nav } from '../../../../components/nav';
+import { HeaderButton, Nav } from '../../../../components';
 import {
   HeaderWrapper,
   HeaderParagraph,
@@ -10,9 +9,7 @@ import {
 
 export const Header = (): React.ReactElement => {
   const handleClick = () => {
-    window.open(
-      'https://docs.google.com/forms/d/e/1FAIpQLSeh8rIqDCip_i3B29Zbjmw-8dM80d8ins1qrjjuq5JjlcYW-Q/viewform',
-    );
+    window.open('https://t.me/CafeinaVagas');
   };
 
   return (
@@ -22,9 +19,8 @@ export const Header = (): React.ReactElement => {
       <HeaderWrapper>
         <HeaderTitle>Que bom te ver por aqui!</HeaderTitle>
         <HeaderParagraph>
-          Somos as <strong>Compiladoras de Cafeína</strong>, uma comunidade de
-          acolhimento, apoio e educação para mulheres e pessoas trans iniciantes
-          em TI.
+          Somos a <strong>Cafeína Bits</strong>, uma comunidade focada em
+          pessoas iniciantes na tecnologia, com foco em grupos minorizados.
         </HeaderParagraph>
       </HeaderWrapper>
 

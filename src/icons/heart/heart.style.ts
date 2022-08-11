@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import colors from '../../styles/colors';
 
 export const pulse = keyframes`
   0%{
@@ -32,14 +33,14 @@ export const HeartContainer = styled.div`
 export const HeartStyle = styled.div`
   width: 20px;
   height: 20px;
-  background-color: #ffffff;
+  background-color: ${colors.white};
   transform: rotate(45deg);
   animation: ${pulse} 4s linear infinite;
 
   &:before {
     content: '';
     position: absolute;
-    background-color: #ffffff;
+    background-color: ${colors.white};
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -50,7 +51,7 @@ export const HeartStyle = styled.div`
   &:after {
     content: '';
     position: absolute;
-    background-color: #ffffff;
+    background-color: ${colors.white};
     width: 20px;
     height: 20px;
     border-radius: 50%;

@@ -47,7 +47,12 @@ export const SocialNetworkButton = ({
   };
 
   return (
-    <StyledButton type="button" onClick={handleClick}>
+    <StyledButton
+      type="button"
+      onClick={handleClick}
+      role="button"
+      aria-label={`${text} link`}
+    >
       <Icon /> <Text>{text}</Text>
     </StyledButton>
   );

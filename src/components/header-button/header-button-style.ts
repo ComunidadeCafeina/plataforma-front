@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 
 export const StyledButton = styled.button`
-  background-color: #fe393b;
+  background-color: ${colors.lightRed};
   width: inherit;
   display: flex;
   align-items: center;
@@ -9,13 +11,13 @@ export const StyledButton = styled.button`
   border: none;
   border-radius: 24px;
   height: 56px;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 5rem 0 5rem 0;
+  color: ${colors.white};
+  font-size: ${fonts.sizes.s};
+  font-weight: ${fonts.weights.bold};
+  margin: 80px 0 80px 0;
   cursor: pointer;
 `;
 
 export const ContentContainer = styled.div`
-  width: 15rem;
+  width: 240px;
 `;
